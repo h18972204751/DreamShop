@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj": {}
+    "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj": {}
   },
   "projects": {
-    "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj": {
+    "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
+        "projectUniqueName": "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
         "projectName": "CommonHelp",
-        "projectPath": "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\obj\\",
+        "projectPath": "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
+        "packagesPath": "C:\\Users\\only\\.nuget\\packages\\",
+        "outputPath": "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\only\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +25,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://10.0.2.10:8004/nuget": {},
+          "G:\\3XM\\Infrastructures\\Kscc.Core\\bin\\Debug": {},
+          "G:\\发布": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <!-- <router-view/> -->
+    <router-view/>
     <!-- 部分路由不应该包含这个Footer -->
     <Footer v-if="excludeRoutes.indexOf($route.name) == -1"></Footer>
   </div>

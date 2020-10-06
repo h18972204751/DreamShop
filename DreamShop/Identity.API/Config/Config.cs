@@ -1,5 +1,6 @@
 ﻿using IdentityServer4;
 using IdentityServer4.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,54 +10,18 @@ namespace Identity.API.Config
 {
     public class Config
     {
-        public static IEnumerable<Client> GetClients()
+
+        public static IEnumerable<ApiResource> GetApiResources()
         {
-            return new List<Client>
+            return new[]
             {
-                new Client
-                {
-                    ClientId="iphone",
-                    ClientSecrets = new List<Secret>
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    RefreshTokenExpiration = TokenExpiration.Sliding,
-                    AllowOfflineAccess = true,
-                    RequireClientSecret = false,
-                    AllowedGrantTypes = new List<string>{"sms_suth_code"},
-                    AlwaysIncludeUserClaimsInIdToken = true,
-                    AllowedScopes = new List<string>
-                    {
-                        "gateway_api",
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.OfflineAccess,
-                    },
-
-                },
-                new Client
-                {
-                    ClientId="android",
-                    ClientSecrets = new List<Secret>
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    RefreshTokenExpiration = TokenExpiration.Sliding,
-                    AllowOfflineAccess = true,
-                    RequireClientSecret = false,
-                    AllowedGrantTypes = new List<string>{"sms_auth_code"},
-                    AlwaysIncludeUserClaimsInIdToken = true,
-                    AllowedScopes = new List<string>
-                    {
-                        "gateway_api",
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.OfflineAccess,
-                    },
-
-                }
+                new ApiResource("clientservice", "CAS Client Service"),
+                new ApiResource("productservice", "CAS Product Service"),
+                new ApiResource("agentservice", "CAS Agent Service")
             };
         }
+
+
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new List<IdentityResource>
@@ -65,13 +30,64 @@ namespace Identity.API.Config
                 new IdentityResources.Profile(),
             };
         }
-        public static IEnumerable<ApiResource> GetApiResources()
+
+        //public static IEnumerable<TestUser> GetUsers()
+        //{
+        //    return new[]
+        //    {
+        //        new TestUser
+        //        {
+        //            SubjectId = "10001",
+        //            Username = "edison@hotmail.com",
+        //            Password = "edisonpassword"
+        //        },
+        //        new TestUser
+        //        {
+        //            SubjectId = "10002",
+        //            Username = "andy@hotmail.com",
+        //            Password = "andypassword"
+        //        },
+        //        new TestUser
+        //        {
+        //            SubjectId = "10003",
+        //            Username = "leo@hotmail.com",
+        //            Password = "leopassword"
+        //        }
+        //    };
+        //}
+
+
+
+
+        public static IEnumerable<Client> GetClients()
         {
-            return new List<ApiResource>
+            return new[]
             {
-                new ApiResource("gateway_api","user service")
+                new Client
+                {
+                    ClientId = "client.api.service",
+                    ClientSecrets = new [] { new Secret("clientsecret".Sha256()) },
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
+                    AllowedScopes = new [] { "clientservice" }
+                },
+                new Client
+                {
+                    ClientId = "product.api.service",
+                    ClientSecrets = new [] { new Secret("productsecret".Sha256()) },
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
+                    AllowedScopes = new [] { "clientservice", "productservice" }
+                },
+                new Client
+                {
+                    ClientId = "agent.api.service",
+                    ClientSecrets = new [] { new Secret("agentsecret".Sha256()) },
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
+                    AllowedScopes = new [] { "agentservice", "clientservice", "productservice" }
+                }
             };
         }
+
+
 
 
     }

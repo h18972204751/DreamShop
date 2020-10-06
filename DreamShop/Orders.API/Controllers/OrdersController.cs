@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Orders.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
     {

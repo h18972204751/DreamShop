@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CommonHelp.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,13 @@ namespace Identity.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddIdentityServer()
+            .AddDeveloperSigningCredential()
+            //.AddTestUsers(InMemoryConfiguration.GetUsers().ToList())
+            .AddInMemoryClients(Config.Config.GetClients())
+            .AddInMemoryApiResources(Config.Config.GetApiResources());
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +42,7 @@ namespace Identity.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseIdentityServer();
 
             app.UseRouting();
 
@@ -43,6 +52,8 @@ namespace Identity.API
             {
                 endpoints.MapControllers();
             });
+
+            ConsulUtil.ConsulRegist(app, Configuration);
         }
     }
 }
