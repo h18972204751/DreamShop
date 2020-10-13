@@ -1,5 +1,6 @@
 ﻿using IdentityServer4;
 using IdentityServer4.Models;
+using IdentityServer4.Test;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -10,85 +11,75 @@ namespace Identity.API.Config
 {
     public class Config
     {
-
-        public static IEnumerable<ApiResource> GetApiResources()
+        //定义要保护的资源（webapi）
+        public static IEnumerable<ApiScope> GetApiResources()
         {
-            return new[]
-            {
-                new ApiResource("clientservice", "CAS Client Service"),
-                new ApiResource("productservice", "CAS Product Service"),
-                new ApiResource("agentservice", "CAS Agent Service")
-            };
+            return new List<ApiScope>
+             {
+                 new ApiScope("api", "My API")
+             };
         }
-
-
+        //定义可以访问该API的客户端
+        public static IEnumerable<Client> GetClients()
+        {
+            return new List<Client>
+             {
+                new Client
+                {
+                    ClientId = "client",
+                    ClientName = "Client Name",
+                    AllowOfflineAccess = true,  //是否可以离线访问，refresh
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,   //客户端模式
+                    ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A".Sha256()) },
+                    AllowedScopes = { "api", IdentityServerConstants.StandardScopes.OfflineAccess }
+                },
+                new Client
+                {
+                    ClientId = "password",
+                    ClientName = "Password Name",
+                    AllowOfflineAccess = true,  //是否可以离线访问，refresh
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,   //密码模式
+                    ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A1".Sha256()) },
+                    RefreshTokenUsage=TokenUsage.ReUse,
+                    AlwaysIncludeUserClaimsInIdToken = true,
+                    AllowedScopes=new List<string>
+                    {
+                        "api",
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.OfflineAccess
+                    }
+                },
+             };
+        }
+        public static List<TestUser> GeTestUsers()
+        {
+            return new List<TestUser>
+             {
+                 new TestUser
+                 {
+                     SubjectId = "1",
+                     Username = "alice",
+                     Password = "password"
+                 },
+                 new TestUser
+                 {
+                     SubjectId = "2",
+                     Username = "bob",
+                     Password = "password"
+                 }
+             };
+        }
+        //openid  connect
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new List<IdentityResource>
-            {
-                new IdentityResources.OpenId(),
-                new IdentityResources.Profile(),
-            };
+             {
+                 new IdentityResources.OpenId(),
+                 new IdentityResources.Profile(),
+                 new IdentityResources.Email()
+             };
         }
-
-        //public static IEnumerable<TestUser> GetUsers()
-        //{
-        //    return new[]
-        //    {
-        //        new TestUser
-        //        {
-        //            SubjectId = "10001",
-        //            Username = "edison@hotmail.com",
-        //            Password = "edisonpassword"
-        //        },
-        //        new TestUser
-        //        {
-        //            SubjectId = "10002",
-        //            Username = "andy@hotmail.com",
-        //            Password = "andypassword"
-        //        },
-        //        new TestUser
-        //        {
-        //            SubjectId = "10003",
-        //            Username = "leo@hotmail.com",
-        //            Password = "leopassword"
-        //        }
-        //    };
-        //}
-
-
-
-
-        public static IEnumerable<Client> GetClients()
-        {
-            return new[]
-            {
-                new Client
-                {
-                    ClientId = "client.api.service",
-                    ClientSecrets = new [] { new Secret("clientsecret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "clientservice" }
-                },
-                new Client
-                {
-                    ClientId = "product.api.service",
-                    ClientSecrets = new [] { new Secret("productsecret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "clientservice", "productservice" }
-                },
-                new Client
-                {
-                    ClientId = "agent.api.service",
-                    ClientSecrets = new [] { new Secret("agentsecret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
-                    AllowedScopes = new [] { "agentservice", "clientservice", "productservice" }
-                }
-            };
-        }
-
-
-
-
     }
+
 }

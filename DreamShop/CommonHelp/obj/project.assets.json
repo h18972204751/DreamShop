@@ -5364,23 +5364,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\only\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
+      "projectUniqueName": "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
       "projectName": "CommonHelp",
-      "projectPath": "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
-      "packagesPath": "C:\\Users\\only\\.nuget\\packages\\",
-      "outputPath": "G:\\1Dream\\DreamShop\\DreamShop\\CommonHelp\\obj\\",
+      "projectPath": "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\only\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5388,8 +5384,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "G:\\3XM\\Infrastructures\\Kscc.Core\\bin\\Debug": {},
-        "G:\\发布": {},
+        "http://10.0.2.10:8004/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5434,7 +5429,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

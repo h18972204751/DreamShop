@@ -26,6 +26,8 @@ namespace Identity.API.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            var ss = GetTokenResponse.GetTokenPassword();
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

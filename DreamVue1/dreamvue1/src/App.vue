@@ -5,7 +5,7 @@
   </div>
 </template>
 
-
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
 <script>
 import Header from '@/components/header/Header';
 export default {

@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import * as actions from './actions';
 import * as mutations from './mutations';
 import * as getters from './getters';
+import * as http from './http';
 
 Vue.use(Vuex);
 
@@ -24,7 +25,7 @@ export default new Vuex.Store({
       remarks: []
     },
     userInfo: { // 用户信息
-      username: ''
+      data: ''
     },
     signUpStep: 0, // 登陆步骤
     marketing: { // 营销
@@ -49,5 +50,6 @@ export default new Vuex.Store({
   },
   getters,
   actions,
-  mutations
+  mutations,
+  http
 });

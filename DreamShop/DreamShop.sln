@@ -17,17 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{DCDE899C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{524E6CD7-544A-4DE4-A30D-7C77244FFD78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.API", "Product.API\Product.API.csproj", "{E23B0A23-6CE0-4A1C-9321-CEE50F4BC5F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.API", "Product.API\Product.API.csproj", "{E23B0A23-6CE0-4A1C-9321-CEE50F4BC5F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.API", "Orders.API\Orders.API.csproj", "{EC65FE90-7F96-4A3D-AD20-BCB011349987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders.API", "Orders.API\Orders.API.csproj", "{EC65FE90-7F96-4A3D-AD20-BCB011349987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonHelp", "CommonHelp\CommonHelp.csproj", "{0E8C3608-938D-42B1-9443-819E834B156B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonHelp", "CommonHelp\CommonHelp.csproj", "{0E8C3608-938D-42B1-9443-819E834B156B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{F7ADD16B-07C0-48CB-A011-9C19C8D205AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{F7ADD16B-07C0-48CB-A011-9C19C8D205AD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{80FA9597-F975-4329-BB4F-5AD1207CD3CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.API", "Identity.API\Identity.API.csproj", "{89DCE885-E4E5-4A26-9711-4A41C0ED2568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.API", "Identity.API\Identity.API.csproj", "{89DCE885-E4E5-4A26-9711-4A41C0ED2568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

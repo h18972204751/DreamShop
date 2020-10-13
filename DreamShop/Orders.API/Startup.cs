@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Orders.API.Utils;
 
 namespace Orders.API
@@ -27,6 +28,20 @@ namespace Orders.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddAuthentication("Bearer")
+               //AddIdentityServerAuthentication在组件IdentityServer4.AccessTokenValidation中  这个方法支持Reference Token 和 JWT 的认证
+               .AddJwtBearer("Bearer", options =>
+               {
+                   options.Authority = "http://localhost:5000";    //配置Identityserver的授权地址
+                   options.RequireHttpsMetadata = false;           //不需要https    
+                   options.TokenValidationParameters = new TokenValidationParameters
+                   {
+                       ValidateAudience = false
+                   };
+                   //options.ApiName = OAuthConfig.UserApi.ApiName;  //api的name，需要和config的名称相同
+               });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +54,7 @@ namespace Orders.API
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

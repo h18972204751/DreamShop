@@ -5,10 +5,14 @@ import App from './App'
 import router from './router'
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
+import qs from "qs";
+import axios from "axios";
 
+           
 Vue.config.productionTip = false
 Vue.use(ViewUI);
-
+Vue.use(axios);
+Vue.use(qs);
 new Vue({
     el: '#app',
     router,

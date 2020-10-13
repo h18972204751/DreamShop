@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -21,12 +22,10 @@ namespace Orders.API.Controllers
             this._logger = logger;
             this._configuration = configuration;
         }
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
-            //throw new 
-            //var ss = "";
-            //DateTime dd=Convert.ToDateTime(ss);
             string result = $"【订单服务】{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}——" +
                 $"{Request.HttpContext.Connection.LocalIpAddress}:{_configuration["port"]}--未熔断";
             return Ok(result);

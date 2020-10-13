@@ -11,8 +11,6 @@ E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Consul.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.AssemblyInfoInputs.cache
 E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.AssemblyInfo.cs
-E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.csproj.CoreCompileInputs.cache
-E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.MvcApplicationPartsAssemblyInfo.cache
 E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.RazorTargetAssemblyInfo.cache
 E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.csproj.CopyComplete
 E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\staticwebassets\Orders.API.StaticWebAssets.Manifest.cache
@@ -25,3 +23,12 @@ E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.Ext
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\CommonHelp.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\CommonHelp.pdb
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.csproj.CoreCompileInputs.cache
+E:\1netcore\DreamShop\DreamShop\Orders.API\obj\Debug\netcoreapp3.1\Orders.API.MvcApplicationPartsAssemblyInfo.cache

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueResource from 'vue-resource'
 import Index from '@/components/Index'
 const Login = resolve => require(['@/components/Login'], resolve);
 const SignUp = resolve => require(['@/components/SignUp'], resolve);
@@ -21,7 +22,7 @@ const MyShoppingCart = resolve => require(['@/components/home/MyShoppingCart'], 
 const Merchant = resolve => require(['@/components/Merchant'], resolve);
 
 Vue.use(Router)
-
+Vue.use(VueResource)
 // export default new Router({
 //     routes: [{
 //         path: '/',

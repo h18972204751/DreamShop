@@ -1,3 +1,9 @@
+import qs from "qs";
+import axios from "axios";
+
+const url = 'http://localhost:5000/';
+
+
 // 获取秒杀数据
 export const loadSeckillsInfo = ({ commit }) => {
   return new Promise((resolve, reject) => {
@@ -73,7 +79,7 @@ export const loadComputer = ({ commit }) => {
   return new Promise((resolve, reject) => {
     const computer = {
       title: '电脑数码',
-      link: [ '电脑馆', '游戏极品', '装机大师', '职场焕新', '女神频道', '虚拟现实', '二合一平板', '电子教育', '万物周刊' ],
+      link: ['电脑馆', '游戏极品', '装机大师', '职场焕新', '女神频道', '虚拟现实', '二合一平板', '电子教育', '万物周刊'],
       detail: [
         {
           bigImg: 'static/img/index/computer/item-computer-1.jpg',
@@ -146,7 +152,7 @@ export const loadEat = ({ commit }) => {
   return new Promise((resolve, reject) => {
     const eat = {
       title: '爱吃',
-      link: [ '休闲零食', '坚果', '牛奶', '饮料冲调', '食用油', '大米', '白酒', '红酒', '烧烤食材', '牛排', '樱桃' ],
+      link: ['休闲零食', '坚果', '牛奶', '饮料冲调', '食用油', '大米', '白酒', '红酒', '烧烤食材', '牛排', '樱桃'],
       detail: [
         {
           bigImg: 'static/img/index/eat/item-eat-1-1.jpg',
@@ -362,8 +368,8 @@ export const loadGoodsInfo = ({ commit }) => {
         ],
         remarks: {
           goodAnalyse: 90,
-          remarksTags: [ '颜色可人', '实惠优选', '严丝合缝', '极致轻薄', '质量没话说', '比定做还合适', '完美品质', '正品行货', '包装有档次', '不容易发热', '已经买第二个', '是全覆盖' ],
-          remarksNumDetail: [ 2000, 3000, 900, 1 ],
+          remarksTags: ['颜色可人', '实惠优选', '严丝合缝', '极致轻薄', '质量没话说', '比定做还合适', '完美品质', '正品行货', '包装有档次', '不容易发热', '已经买第二个', '是全覆盖'],
+          remarksNumDetail: [2000, 3000, 900, 1],
           detail: [
             {
               username: 'p****1',
@@ -719,16 +725,42 @@ export const addSignUpUser = ({ commit }, data) => {
 };
 
 // 用户登录
+
 export const login = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
-    if (data.username === 'Gavin' && data.password === '123456') {
+    //, { emulateJSON: true }qs.stringify(data)
+    //axios.get(url + 'api/Login/Login', {params:data})
+    axios.post(url + 'api/Login/Login', qs.stringify(data))
+      .then((res) => {
+        if(res.data.success)
+        {
+          localStorage.setItem('loginInfo', JSON.stringify(res.data.response.loginName));
+          const loginInfos = localStorage.getItem('loginInfo');
+          console.log(loginInfos);
+          commit('SET_USER_LOGIN_INFO', res.data.response);
+          resolve(true);
+          return true;
+        }
+        else
+        {
+          resolve(false);
+          return false;
+        }
+      });
+  });
+};
+
+
+export const logins = ({ commit }, data) => {
+  return new Promise((resolve, reject) => {
+    if (data.loginName === 'admin' && data.loginPassword === '123') {
       localStorage.setItem('loginInfo', JSON.stringify(data));
       commit('SET_USER_LOGIN_INFO', data);
       resolve(true);
       return true;
     }
     const userArr = localStorage.getItem('users');
-    console.log(userArr);
+    console.log("11"+userArr);
     if (userArr) {
       const users = JSON.parse(userArr);
       for (const item of users) {
