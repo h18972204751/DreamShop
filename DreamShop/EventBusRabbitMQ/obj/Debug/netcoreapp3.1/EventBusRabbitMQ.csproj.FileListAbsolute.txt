@@ -1,0 +1,4 @@
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.deps.json
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.dll
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\obj\Debug\netcoreapp3.1\EventBusRabbitMQ.AssemblyInfoInputs.cache
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\obj\Debug\netcoreapp3.1\EventBusRabbitMQ.AssemblyInfo.cs

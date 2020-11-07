@@ -63,7 +63,7 @@ namespace Identity.API.Model
         /// </summary>
         public decimal UserMoney { get; }
 
-        public DateTime CreateTime { get; set; }
+        public DateTime CreateTime { get; set; } = DateTime.Now;
         public string CreateUserId { get; set; }
         public DateTime UpdateTime { get; set; } = DateTime.Now;
         public string UpdateUserId { get; set; }

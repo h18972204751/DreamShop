@@ -729,7 +729,7 @@ export const addSignUpUser = ({ commit }, data) => {
 export const login = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
     //, { emulateJSON: true }qs.stringify(data)
-    //axios.get(url + 'api/Login/Login', {params:data})
+    //axios.get(url + 'api/Login/Login', {params:data}) 
     axios.post(url + 'api/Login/Login', qs.stringify(data))
       .then((res) => {
         if(res.data.success)
@@ -737,6 +737,7 @@ export const login = ({ commit }, data) => {
           localStorage.setItem('loginInfo', JSON.stringify(res.data.response.loginName));
           const loginInfos = localStorage.getItem('loginInfo');
           console.log(loginInfos);
+          console.log(res.data);
           commit('SET_USER_LOGIN_INFO', res.data.response);
           resolve(true);
           return true;
@@ -786,6 +787,7 @@ export const signOut = ({ commit }) => {
 // 判断是否登陆
 export const isLogin = ({ commit }) => {
   const user = localStorage.getItem('loginInfo');
+  console.log("-----"+user);
   if (user) {
     commit('SET_USER_LOGIN_INFO', JSON.parse(user));
   }

@@ -53,7 +53,7 @@ namespace Identity.API
                 //如果是允许指定的域、方法、消息头需要使用WithOrigins、WithMethods、WithHeaders方法。
                 //在这里可以添加多条策略。
             });
-
+            services.AddHttpClient();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

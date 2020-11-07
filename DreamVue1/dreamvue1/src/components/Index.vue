@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Search></Search>
+    <div class="Search"><Search></Search></div>
     <HomeNav></HomeNav>
     <!-- 商品显示区域 -->
     <div class="content">
@@ -171,6 +171,11 @@ export default {
 .container {
   background-color: #F6F6F6;
 }
+
+.Search{
+  background-color: #ffffff;
+}
+
 .content {
   width: 1008px;
   margin: 0px auto;

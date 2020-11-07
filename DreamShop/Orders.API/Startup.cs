@@ -6,12 +6,13 @@ using CommonHelp.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Orders.API.Utils;
+using Orders.API.Data;
 
 namespace Orders.API
 {
@@ -29,6 +30,9 @@ namespace Orders.API
         {
             services.AddControllers();
 
+            services.AddDbContext<OrdersDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("OrderDbContext")));
+
             services.AddAuthentication("Bearer")
                //AddIdentityServerAuthentication在组件IdentityServer4.AccessTokenValidation中  这个方法支持Reference Token 和 JWT 的认证
                .AddJwtBearer("Bearer", options =>
@@ -41,6 +45,10 @@ namespace Orders.API
                    };
                    //options.ApiName = OAuthConfig.UserApi.ApiName;  //api的name，需要和config的名称相同
                });
+            services.AddHttpClient();
+
+
+
 
         }
 
@@ -67,8 +75,8 @@ namespace Orders.API
             ///服务注册consul
             ///启动的时候已经完成注册，这里可能会有疑惑，当请求来的时候会不会再注册一次
             ///这里管道逻辑是请求的时候已经返回了，不会执行这个注册了
-            app.ConsulRegister(Configuration);
-
+            //app.ConsulRegister(Configuration);
+            //ConsulUtil.ConsulRegist(app, Configuration);
 
         }
     }

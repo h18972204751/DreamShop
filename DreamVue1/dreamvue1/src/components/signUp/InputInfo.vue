@@ -1,7 +1,7 @@
 <template>
   <div class="info-form">
      <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80" >
-        <FormItem label="用户名" prop="name">
+        <FormItem label="登录名" prop="name">
             <i-input v-model="formValidate.name" clearable size="large" placeholder="请输入你的姓名"></i-input>
         </FormItem>
         <FormItem label="邮箱" prop="mail">

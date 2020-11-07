@@ -90,11 +90,9 @@ export default {
         if (valid) {
           this.login(father.formDate).then((result) => {
             if (result) {
-              console.log(result);
               this.$Message.success("登录成功");
-              //father.$router.push("/");
+              father.$router.push("/");
             } else {
-              console.log(result);
               this.$Message.error("用户名或密码错误");
             }
           });

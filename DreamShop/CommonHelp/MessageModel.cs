@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,8 +25,10 @@ namespace CommonHelp
 
         /// <summary>
         /// 返回数据集合
+        /// ResponseJson =new JsonArray() { new {A=1 },new {B="1" } }
         /// </summary>
-        public T Response { get; set; }
+        public JsonArray ResponseJson { get; set; }
 
+        public T Response { get; set; }
     }
 }

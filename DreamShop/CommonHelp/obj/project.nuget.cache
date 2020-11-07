@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3d83o/XuKH5qAorLBDVJH09QSUXFek7/gK3wGXguhhr6GNb22LjAJykYzBfYqY91Ztnr8kdoGNTlwjUWWlHxHg==",
+  "dgSpecHash": "VuhriQdO40tRTDDB3ig9H1iJ2DT+qvdidjaGTh1WJhnoyjdA8UG7zP/7Ds0WAmCa+qrmJJapCQUi8cGuYDew6Q==",
   "success": true,
   "projectFilePath": "E:\\1netcore\\DreamShop\\DreamShop\\CommonHelp\\CommonHelp.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

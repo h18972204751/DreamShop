@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "9Sv4fnwfW38kUElbRL6rqWrxQDpsROTqp1I3pvlQlfuU/6falQNcfkJGhvKtNcrP0xP4ergunjNPjvwdPOPTYA==",
+  "success": true,
+  "projectFilePath": "E:\\1netcore\\DreamShop\\DreamShop\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
