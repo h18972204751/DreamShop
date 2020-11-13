@@ -8,6 +8,7 @@ E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Orders.API.ru
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Orders.API.runtimeconfig.dev.json
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Orders.API.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Orders.API.pdb
+E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Orders.API.Views.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\Consul.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\IdentityModel.dll
 E:\1netcore\DreamShop\DreamShop\Orders.API\bin\Debug\netcoreapp3.1\IdentityServer4.dll

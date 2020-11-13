@@ -7,7 +7,6 @@ E:\1netcore\DreamShop\DreamShop\Payment.API\bin\Debug\netcoreapp3.1\Payment.API.
 E:\1netcore\DreamShop\DreamShop\Payment.API\bin\Debug\netcoreapp3.1\Payment.API.runtimeconfig.dev.json
 E:\1netcore\DreamShop\DreamShop\Payment.API\bin\Debug\netcoreapp3.1\Payment.API.dll
 E:\1netcore\DreamShop\DreamShop\Payment.API\bin\Debug\netcoreapp3.1\Payment.API.pdb
-E:\1netcore\DreamShop\DreamShop\Payment.API\obj\Debug\netcoreapp3.1\Payment.API.csprojAssemblyReference.cache
 E:\1netcore\DreamShop\DreamShop\Payment.API\obj\Debug\netcoreapp3.1\Payment.API.AssemblyInfoInputs.cache
 E:\1netcore\DreamShop\DreamShop\Payment.API\obj\Debug\netcoreapp3.1\Payment.API.AssemblyInfo.cs
 E:\1netcore\DreamShop\DreamShop\Payment.API\obj\Debug\netcoreapp3.1\Payment.API.csproj.CoreCompileInputs.cache

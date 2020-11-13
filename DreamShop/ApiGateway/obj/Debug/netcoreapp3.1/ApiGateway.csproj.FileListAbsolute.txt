@@ -45,3 +45,4 @@ E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\staticwebasse
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.dll
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.pdb
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.genruntimeconfig.cache
+E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.csprojAssemblyReference.cache

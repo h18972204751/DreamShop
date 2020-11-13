@@ -37,13 +37,15 @@ namespace Orders.API.Controllers
             //var login = new { LoginName = "admin", LoginPassword = "123" };
             //var ss = ApiHelper.PostAsync<MessageModel<Logins>>(url, dictionary,"");
             var sss = new MessageModel<Logins>();
+            sss = await ApiHelper.PostAsync<MessageModel<Logins>>(url, dictionary, 1);
             try
             {
-                 sss =await ApiHelper.PostAsync<MessageModel<Logins>>(url, dictionary,1);
+                sss = await ApiHelper.PostAsync<MessageModel<Logins>>(url, dictionary, 1);
             }
             catch (Exception ex)
             {
-                return new MessageModel<Logins>() { Msg = ex.Message, Success = false };
+                HttpContext.Response.StatusCode = 404;
+                //return new MessageModel<Logins>() { Msg = ex.Message, Success = false };
             }
             return sss;
         }

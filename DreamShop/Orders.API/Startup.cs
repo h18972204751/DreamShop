@@ -57,7 +57,13 @@ namespace Orders.API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+
+                //app.UseDeveloperExceptionPage();
+                app.UseStatusCodePagesWithReExecute("/StatusCode?code={0}");
+            }
+            else 
+            {
+                app.UseStatusCodePagesWithReExecute("/StatusCode", "?code={0}");
             }
 
             app.UseRouting();

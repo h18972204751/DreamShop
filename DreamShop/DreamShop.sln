@@ -31,19 +31,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.API", "Identity.AP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShoppingTrolley", "ShoppingTrolley", "{FDAEC354-1CE9-4343-A68E-84026F5773B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingTrolley.API", "ShoppingTrolley.API\ShoppingTrolley.API.csproj", "{BCFF73CC-EAA4-4688-B226-96C7317F8574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingTrolley.API", "ShoppingTrolley.API\ShoppingTrolley.API.csproj", "{BCFF73CC-EAA4-4688-B226-96C7317F8574}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{96D9E621-70E8-479C-AE96-D7C39CAD2A79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment.API", "Payment.API\Payment.API.csproj", "{3426F9D9-32AC-49D9-A148-3D8EA542FA90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payment.API", "Payment.API\Payment.API.csproj", "{3426F9D9-32AC-49D9-A148-3D8EA542FA90}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{B11B12BF-5EED-439F-B82C-3959361E9C75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus_RabbitMQ", "EventBus_RabbitMQ", "{736BBD5C-913E-4356-A4AE-A5A1757FDDF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "EventBus\EventBus.csproj", "{D94839E5-D72D-4FD6-89F7-586BC2C2AD80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "EventBus\EventBus.csproj", "{D94839E5-D72D-4FD6-89F7-586BC2C2AD80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBusRabbitMQ", "EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{7B9947EC-6D54-4F49-8944-B874EB2666A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{7B9947EC-6D54-4F49-8944-B874EB2666A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
