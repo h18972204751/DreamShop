@@ -1,6 +1,5 @@
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\bin\Debug\netcoreapp3.1\appsettings.json
-E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\bin\Debug\netcoreapp3.1\ShoppingTrolley.API.exe
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\bin\Debug\netcoreapp3.1\ShoppingTrolley.API.deps.json
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\bin\Debug\netcoreapp3.1\ShoppingTrolley.API.runtimeconfig.json
@@ -53,10 +52,11 @@ E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\Shop
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.AssemblyInfo.cs
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.csproj.CoreCompileInputs.cache
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.MvcApplicationPartsAssemblyInfo.cache
-E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.RazorTargetAssemblyInfo.cache
-E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.csproj.CopyComplete
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\staticwebassets\ShoppingTrolley.API.StaticWebAssets.Manifest.cache
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\staticwebassets\ShoppingTrolley.API.StaticWebAssets.xml
+E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\ShoppingTrolley.API.styles.css
+E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.RazorTargetAssemblyInfo.cache
+E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.csproj.CopyComplete
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.dll
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.pdb
 E:\1netcore\DreamShop\DreamShop\ShoppingTrolley.API\obj\Debug\netcoreapp3.1\ShoppingTrolley.API.genruntimeconfig.cache

@@ -1,6 +1,5 @@
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\appsettings.json
-E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\ApiGateway.exe
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\ocelot.json
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\ApiGateway.deps.json
@@ -33,16 +32,17 @@ E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\Polly.dll
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard1.3\System.Net.Http.WinHttpHandler.dll
 E:\1netcore\DreamShop\DreamShop\ApiGateway\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard1.3\System.Net.Http.WinHttpHandler.dll
+E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.csprojAssemblyReference.cache
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.AssemblyInfoInputs.cache
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.AssemblyInfo.cs
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.csproj.CoreCompileInputs.cache
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.MvcApplicationPartsAssemblyInfo.cs
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.MvcApplicationPartsAssemblyInfo.cache
-E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.RazorTargetAssemblyInfo.cache
-E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.csproj.CopyComplete
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\staticwebassets\ApiGateway.StaticWebAssets.Manifest.cache
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\staticwebassets\ApiGateway.StaticWebAssets.xml
+E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\scopedcss\bundle\ApiGateway.styles.css
+E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.RazorTargetAssemblyInfo.cache
+E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.csproj.CopyComplete
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.dll
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.pdb
 E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.genruntimeconfig.cache
-E:\1netcore\DreamShop\DreamShop\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.csprojAssemblyReference.cache

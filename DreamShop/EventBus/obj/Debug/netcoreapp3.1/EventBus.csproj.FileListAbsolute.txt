@@ -1,9 +1,4 @@
-E:\1netcore\DreamShop\DreamShop\EventBus\bin\Debug\netcoreapp3.1\EventBus.deps.json
-E:\1netcore\DreamShop\DreamShop\EventBus\bin\Debug\netcoreapp3.1\EventBus.dll
-E:\1netcore\DreamShop\DreamShop\EventBus\bin\Debug\netcoreapp3.1\EventBus.pdb
 E:\1netcore\DreamShop\DreamShop\EventBus\obj\Debug\netcoreapp3.1\EventBus.csprojAssemblyReference.cache
 E:\1netcore\DreamShop\DreamShop\EventBus\obj\Debug\netcoreapp3.1\EventBus.AssemblyInfoInputs.cache
 E:\1netcore\DreamShop\DreamShop\EventBus\obj\Debug\netcoreapp3.1\EventBus.AssemblyInfo.cs
 E:\1netcore\DreamShop\DreamShop\EventBus\obj\Debug\netcoreapp3.1\EventBus.csproj.CoreCompileInputs.cache
-E:\1netcore\DreamShop\DreamShop\EventBus\obj\Debug\netcoreapp3.1\EventBus.dll
-E:\1netcore\DreamShop\DreamShop\EventBus\obj\Debug\netcoreapp3.1\EventBus.pdb

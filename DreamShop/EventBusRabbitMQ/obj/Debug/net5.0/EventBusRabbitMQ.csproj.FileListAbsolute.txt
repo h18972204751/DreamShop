@@ -1,0 +1,5 @@
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\bin\Debug\net5.0\EventBus.dll
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.csprojAssemblyReference.cache
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.GeneratedMSBuildEditorConfig.editorconfig
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.AssemblyInfoInputs.cache
+E:\1netcore\DreamShop\DreamShop\EventBusRabbitMQ\obj\Debug\net5.0\EventBusRabbitMQ.AssemblyInfo.cs
