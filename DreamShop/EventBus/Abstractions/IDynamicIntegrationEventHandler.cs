@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace EventBus.Abstractions
 {
+    /// <summary>
+    /// 接口 
+    /// </summary>
     public interface IDynamicIntegrationEventHandler
     {
         Task Handle(dynamic evenData);
