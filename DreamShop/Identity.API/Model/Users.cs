@@ -8,7 +8,7 @@ namespace Identity.API.Model
     public class Users : BaseModel
     {
 
-        public string LoginsId { get; set; }
+        public int LoginsId { get; set; }
 
         /// <summary>
         /// 用户名

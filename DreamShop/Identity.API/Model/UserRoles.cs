@@ -8,9 +8,9 @@ namespace Identity.API.Model
     public class UserRoles:BaseModel
     {
 
-        public string UsersId { get; set; }
+        public int UsersId { get; set; }
 
-        public string RolesId { get; set; }
+        public int RolesId { get; set; }
 
         public DateTime UpdateTime { get; set; } = DateTime.Now;
         public string UpdateUserId { get; set; }

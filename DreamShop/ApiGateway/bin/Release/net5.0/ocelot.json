@@ -1,0 +1,104 @@
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/api/{url}",
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5001
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/ApiGateway/{url}",
+//      "UpstreamHttpMethod": [ "Get", "Post" ]
+//    }
+//  ]
+//}
+
+//*****************************单地址多实例负载均衡********************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/api/{url}", //服务地址--url变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 9050 //服务端口
+//        } //可以多个，自行负载均衡
+//        ,
+//        {
+//          "Host": "localhost",
+//          "Port": 5002 //服务端口
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 5003 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/ApiGateway/{url}", //网关地址--url变量   //冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "LoadBalancerOptions": {
+//        "Type": "RoundRobin" //轮询      LeastConnection-最少连接数的服务器   NoLoadBalance不负载均衡 三种模式
+//      }
+//    }
+//  ]
+//}
+
+
+
+
+//*****************************单地址多实例负载均衡+Consul********************************
+
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/{url}", //服务地址--url变量
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/ApiGateway/{url}", //网关地址--url变量
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "ServiceName": "TestConsulService", //consul服务名称，要对上consul组名称,集群的组
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin" //轮询      LeastConnection-最少连接数的服务器   NoLoadBalance不负载均衡
+      },
+      "UseServiceDiscovery": true, //服务发现
+
+      ////"缓存"
+      //"FileCacheOptions": {
+      //  "TtlSeconds": 10 //在第一次请求在网关缓存10，在十秒内怎么请求都是都网关的缓存，不会请求实例，降低压力，提升性能
+      //},
+      ////限流
+      "RateLimitOptions": { //限流，限制了单位时间内的访问量
+        "ClientWhitelist": [], //白名单
+        "EnableRateLimiting": true,
+        "Period": "5m", //1s, 5m, 1h, 1d  
+        "PeriodTimespan": 5, //多少秒之后客户端可以重试
+        "Limit": 5 //统计时间段内允许的最大请求数量
+      }
+      //,
+      ////熔断   目前没搞明白有撒用！！！！！！！
+      //"QoSOptions": {
+      //  "ExceptionsAllowedBeforeBreaking": 3, //允许多少个异常请求
+      //  "DurationOfBreak": 20, // 熔断的时间，单位为ms
+      //  "TimeoutValue": 5000 //如果下游请求的处理时间超过多少则自如将请求设置为超时 默认90秒
+      //}
+
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://127.0.0.1:5011", //网关对外地址
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul" //由Consul提供服务发现
+    },
+
+    "RateLimitOptions": { //限流配置
+      "DisableRateLimitHeaders": false,
+      "QuotaExceededMessage": "接口限流!",
+      "HttpStatusCode": 666,
+      "ClientIdHeader": "ClientId"
+    }
+
+  }
+}

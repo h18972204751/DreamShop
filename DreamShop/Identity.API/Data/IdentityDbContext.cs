@@ -26,7 +26,6 @@ namespace Identity.API.Data
             modelBuilder.Entity<Logins>().HasData(
                 new Logins
                 {
-                    Id = Guid.NewGuid().ToString(),
                     LoginName="admin",
                     LoginPassword="123",
                     Status= UserStatus.Normal,
@@ -34,7 +33,6 @@ namespace Identity.API.Data
                 },
                 new Logins
                 {
-                    Id = Guid.NewGuid().ToString(),
                     LoginName = "wmh",
                     LoginPassword = "123456",
                     Status = UserStatus.Normal,

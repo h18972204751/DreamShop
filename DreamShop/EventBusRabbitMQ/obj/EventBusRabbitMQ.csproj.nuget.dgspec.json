@@ -23,6 +23,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "E:\\1netcore\\nupkg": {},
+          "F:\\NuGet": {},
           "http://10.0.2.10:8004/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -53,6 +54,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.1, )"
             },
             "RabbitMQ.Client": {
               "target": "Package",
@@ -97,6 +102,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "E:\\1netcore\\nupkg": {},
+          "F:\\NuGet": {},
           "http://10.0.2.10:8004/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },

@@ -10,11 +10,11 @@ namespace Orders.API.Model
         /// <summary>
         /// 订单id
         /// </summary>
-        public string OrdersId { get; set; }
+        public int OrdersId { get; set; }
         /// <summary>
         /// 商品id
         /// </summary>
-        public string ProductId { get; set; }
+        public int ProductId { get; set; }
         /// <summary>
         /// 商品名称
         /// </summary>

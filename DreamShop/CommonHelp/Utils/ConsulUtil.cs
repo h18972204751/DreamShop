@@ -41,7 +41,7 @@ namespace CommonHelp.Utils
                     ///心跳时间
                     Interval = TimeSpan.FromSeconds(30),
                     ///心跳地址
-                    HTTP = $"http://{ip}:{port}/api/HealthCheck/Get",
+                    HTTP = $"http://{ip}:{port}/api/HealthCheck",
                     ///超时时间
                     Timeout = TimeSpan.FromSeconds(5),
                     ///取消服务注册时间

@@ -4,10 +4,14 @@ using EventBus.Abstractions;
 using EventBus.Events;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Polly;
+using Polly.Retry;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using RabbitMQ.Client.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +35,7 @@ namespace EventBusRabbitMQ
         /// </summary>
         private readonly IEventBusSubscriptionsManager _subsManager;
 
+        private readonly int _retryCount;
         private readonly ILifetimeScope _autofac;
         private IModel  _iModel;
         /// <summary>
@@ -38,13 +43,14 @@ namespace EventBusRabbitMQ
         /// </summary>
         private string _queueName;
         public EventBusRabbitMQ(IRabbitMQPersistentConnection persistentConnection, ILifetimeScope autofac,
-            IEventBusSubscriptionsManager subsManager, string queueName = null)
+            IEventBusSubscriptionsManager subsManager, string queueName = null, int retryCount = 5)
         {
             _persistentConnection= persistentConnection?? throw new ArgumentNullException(nameof(persistentConnection));
             _autofac = autofac;
             _subsManager = subsManager ?? new InMemoryEventBusSubscriptionsManager();
             _queueName = queueName;
             _iModel = CreateConsumerChannel();
+            _retryCount = retryCount;
             _subsManager.OnEventRemoved += SubsManager_OnEventRemoved;
 
         }
@@ -85,7 +91,13 @@ namespace EventBusRabbitMQ
             {
                 _persistentConnection.TryConnect();
             }
-            //重试机制...后面补上   
+            //重试机制...
+            var policy = RetryPolicy.Handle<BrokerUnreachableException>()
+                .Or<SocketException>()
+                .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
+                {
+                    Console.WriteLine( "Could not publish event: {EventId} after {Timeout}s ({ExceptionMessage})", @event.Id, $"{time.TotalSeconds:n1}", ex.Message);
+                });
 
             //获取名称
             var eventName = @event.GetType().Name;
@@ -93,13 +105,14 @@ namespace EventBusRabbitMQ
             using (var channel = _persistentConnection.CreateModel())
             {
                 //创建一个type=direct的交换器 (可以简化ExchangeDeclare(Exchange_Name,"direct")) 
-                channel.ExchangeDeclare(exchange:Exchange_Name,type:"direct");
+                channel.ExchangeDeclare(exchange:Exchange_Name,type:ExchangeType.Direct);
                 var message = JsonConvert.SerializeObject(@event);
                 var body = Encoding.UTF8.GetBytes(message);
                 //构造一个完全空的内容头，以便与基本内容类一起使用。
                 var properties = channel.CreateBasicProperties();
                 //指定为2 消息持久化
                 properties.DeliveryMode = 2;
+                //properties.Persistent = true; 持久化另一种写法
                 //发布
                 channel.BasicPublish(exchange: Exchange_Name,
                     routingKey: eventName,
@@ -165,7 +178,7 @@ namespace EventBusRabbitMQ
                     //routingKey 路由key
                     //arguments 其它的一些参数
                     //绑定
-                    channel.QueueBind(_queueName,Exchange_Name, eventName);
+                    channel.QueueBind(queue:_queueName, exchange:Exchange_Name, routingKey:eventName);
                 }
 
 
@@ -185,7 +198,7 @@ namespace EventBusRabbitMQ
                 consumer.Received += Consumer_Received;
 
                 //定义基础消费者
-                _iModel.BasicConsume(_queueName, false, consumer);
+                _iModel.BasicConsume(queue:_queueName,autoAck:false,consumer:consumer);
 
             }
             else 
@@ -235,13 +248,13 @@ namespace EventBusRabbitMQ
             //创建信道
             var channel = _persistentConnection.CreateModel();
             //申明Exchange
-            channel.ExchangeDeclare(Exchange_Name, "direct");
+            channel.ExchangeDeclare(exchange:Exchange_Name,type:ExchangeType.Direct);
 
             //durable：true、false  true：在服务器重启时，能够存活
             //exclusive ：是否为当前连接的专用队列，在连接断开后，会自动删除该队列，生产环境中应该很少用到吧。
             //autodelete：当没有任何消费者使用时，自动删除该队列。this means that the queue will be deleted when there are no more processes consuming messages from it.
             //实例化绑定Channel的消费者实例
-            channel.QueueDeclare(_queueName, true, false, false, null);
+            channel.QueueDeclare(queue:_queueName,durable:true,exclusive: false,autoDelete:false,arguments: null);
 
             channel.CallbackException += (sender, ea) =>
             {

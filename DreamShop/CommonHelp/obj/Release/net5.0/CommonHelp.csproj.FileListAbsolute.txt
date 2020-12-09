@@ -1,0 +1,12 @@
+E:\1netcore\DreamShop\DreamShop\CommonHelp\bin\Release\net5.0\CommonHelp.deps.json
+E:\1netcore\DreamShop\DreamShop\CommonHelp\bin\Release\net5.0\CommonHelp.dll
+E:\1netcore\DreamShop\DreamShop\CommonHelp\bin\Release\net5.0\ref\CommonHelp.dll
+E:\1netcore\DreamShop\DreamShop\CommonHelp\bin\Release\net5.0\CommonHelp.pdb
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\CommonHelp.GeneratedMSBuildEditorConfig.editorconfig
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\CommonHelp.AssemblyInfoInputs.cache
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\CommonHelp.AssemblyInfo.cs
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\CommonHelp.csproj.CoreCompileInputs.cache
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\CommonHelp.dll
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\ref\CommonHelp.dll
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\CommonHelp.pdb
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Release\net5.0\CommonHelp.csprojAssemblyReference.cache

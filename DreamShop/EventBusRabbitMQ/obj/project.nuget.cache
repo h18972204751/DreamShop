@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/VsUg86BJpate8ZSv8o8hf0tB21H1yrHduNrC7qO3ZtaC2aGSKTDajSElC5lFkgfVm8qg8m2SheCI0mH2Eg0Mw==",
+  "dgSpecHash": "UhIAP8KlYBZOz1nbtggHXBkEwyOauMYyMkR/zThM4PftvdY/SCTPSfe6V/iqXdLQDcINBxSfG8/0tVWgZQ+Bbw==",
   "success": true,
   "projectFilePath": "E:\\1netcore\\DreamShop\\DreamShop\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\polly\\7.2.1\\polly.7.2.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",

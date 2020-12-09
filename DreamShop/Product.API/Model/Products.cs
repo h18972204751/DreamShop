@@ -11,7 +11,7 @@ namespace Product.API.Model
         /// <summary>
         /// 类型Id
         /// </summary>
-        public string ProductTypeId { get; set; }
+        public int ProductTypeId { get; set; }
 
         /// <summary>
         /// 名称

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +26,6 @@ namespace Orders.API
                     string port = Configuration["port"];
                     webBuilder.UseStartup<Startup>()
                     .UseUrls($"http://{ ip}:{port}");//配置ip地址和端口地址;
-                });
+                }).UseServiceProviderFactory(new AutofacServiceProviderFactory());
     }
 }

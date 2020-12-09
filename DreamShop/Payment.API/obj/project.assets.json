@@ -29,6 +29,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "E:\\1netcore\\nupkg": {},
+        "F:\\NuGet": {},
         "http://10.0.2.10:8004/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
