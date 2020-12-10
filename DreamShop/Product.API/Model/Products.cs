@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +25,21 @@ namespace Product.API.Model
 
 
         /// <summary>
+        /// 产品展示的图片集合
+        /// </summary>
+        public string Pic { set; get; }
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        public int Stock { get; set; }
+
+        /// <summary>
+        /// 已销售的数量[真实的]
+        /// </summary>
+        public int SellNum { set; get; }
+
+        /// <summary>
         /// 原价
         /// </summary>
         public decimal OriginalPrice { get; set; }
@@ -33,59 +49,64 @@ namespace Product.API.Model
         public decimal NowPrice { get; set; }
 
         /// <summary>
-        /// 单位
+        /// 开始销售的时间
         /// </summary>
-        public string Unit { get; set; }
+        //[JsonConverter(typeof(Having.Site.Base.comm.DateTimeConverter))]
+        public DateTime SellTime { set; get; }
 
         /// <summary>
-        /// 库存
+        /// 产品是否在线（true:表示产品可以被搜索，但购买受销售时间影响;false:表示产品下架，不能搜索和购买）
         /// </summary>
-        public int Stock { get; set; }
+        public bool Online { set; get; }
 
         /// <summary>
-        /// 锁定的库存
+        /// 是否置顶显示
         /// </summary>
-        public int LockStock { get; set; }
+        public bool IsTop { set; get; }
 
         /// <summary>
-        /// 安全库存
+        /// 置顶的时间
         /// </summary>
-        public int SafeStock { get; set; }
+        [JsonIgnore]
+        public DateTime TopTime { set; get; }
 
         /// <summary>
-        /// 重量
+        /// 是否标志为新品
         /// </summary>
-        public decimal Weight { get; set; }
+        public bool IsNew { set; get; }
 
         /// <summary>
-        /// 长
+        /// 标志新品标志从销售时间开始多少天内有效，默认1天
         /// </summary>
-        public decimal Length { get; set; }
+        public short SetNewDays { set; get; }
 
         /// <summary>
-        /// 宽
+        /// 是否审核通过（0表示未审核，1表示审核通过，2表示不通过）
         /// </summary>
-        public decimal Width { get; set; }
+        public short IsCheck { set; get; }
+
         /// <summary>
-        /// 高
+        /// 商品单件重量
         /// </summary>
-        public decimal Height { get; set; }
-        
+        public decimal Weight { set; get; }
+
         /// <summary>
-        /// 生产日期
+        /// 添加的时间
         /// </summary>
-        public DateTime ProductionDate { get; set; }
+        public DateTime AddTime { get; set; }
+
         /// <summary>
-        /// 有效期
+        /// 销售限制｛isLimit:true,Total:10,Per:1｝isLimit:是否限制，Total：每人最多买多少，Per：单次买多少
         /// </summary>
-        public int ShelfLife { get; set; }
+        public string SellLimit { set; get; }
 
         /// <summary>
         /// 描述
         /// </summary>
         public string Descript { get; set; }
+
         /// <summary>
-        /// 上架状态
+        /// 上架状态 0未上架 1上架中 2下架中
         /// </summary>
         public int PublishStatus { get; set; }
 
@@ -93,17 +114,12 @@ namespace Product.API.Model
         /// 创建时间
         /// </summary>
         public DateTime CreateTime { get; set; }
-        public string CreateUserId { get; set; }
+        public int CreateUserId { get; set; }
         public DateTime UpdateTime { get; set; } = DateTime.Now;
-        public string UpdateUserId { get; set; }
-        /// <summary>
-        /// 审核状态
-        /// </summary>
-        public int AuditStatus { get; set; }
-
-        
+        public int UpdateUserId { get; set; }
 
         public ProductType ProductType { get; set; }
 
+        public ICollection<ProductProperties> ProductProperties { get; set; }
     }
 }

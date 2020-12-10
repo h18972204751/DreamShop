@@ -28,6 +28,8 @@ namespace Orders.API.Controllers
             this._configuration = configuration;
             this._eventBus = eventBus;
         }
+
+        #region 服务内调 旧方法
         [HttpGet]
         //public async Task<MessageModel<Logins>> Get()
         //{
@@ -52,7 +54,7 @@ namespace Orders.API.Controllers
         //    }
         //    return sss;
         //}
-
+        #endregion
         public async Task<string> Get()
         {
             string result = $"【订单服务】{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}——" +
@@ -61,29 +63,33 @@ namespace Orders.API.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<bool> Post()
-        {
-            try
-            {
+        #region MQ的基本使用 旧
+        //[HttpPost]
+        //public async Task<bool> Post()
+        //{
+        //    try
+        //    {
                 
-                    var pro = new ProductPriceChangedIntegrationEvent()
-                    {
-                        ProductTypeId=1,
-                        Name="123",
-                        Code="456",
-                    };
-                Console.WriteLine("发布");
-                    _eventBus.Publish(pro);
-                Console.WriteLine("发布");
-                return true;
-            }
-            catch (Exception)
-            {
+        //            var pro = new ProductPriceChangedIntegrationEvent()
+        //            {
+        //                ProductTypeId=1,
+        //                Name="123",
+        //                Code="456",
+        //            };
+        //        Console.WriteLine("发布");
+        //            _eventBus.Publish(pro);
+        //        Console.WriteLine("发布");
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return true;
-            }
-        }
+        //        return true;
+        //    }
+        //}
+        #endregion
+
+
 
 
     }

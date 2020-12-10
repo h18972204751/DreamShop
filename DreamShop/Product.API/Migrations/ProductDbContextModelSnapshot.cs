@@ -19,6 +19,32 @@ namespace Product.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Product.API.Model.ProductProperties", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PropertiesGuid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductsId");
+
+                    b.ToTable("ProductProperties");
+                });
+
             modelBuilder.Entity("Product.API.Model.ProductType", b =>
                 {
                     b.Property<int>("Id")
@@ -44,8 +70,8 @@ namespace Product.API.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AuditStatus")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("AddTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Core")
                         .HasColumnType("nvarchar(max)");
@@ -53,20 +79,20 @@ namespace Product.API.Migrations
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CreateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CreateUserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Descript")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Height")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<short>("IsCheck")
+                        .HasColumnType("smallint");
 
-                    b.Property<decimal>("Length")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<bool>("IsNew")
+                        .HasColumnType("bit");
 
-                    b.Property<int>("LockStock")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsTop")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -74,40 +100,46 @@ namespace Product.API.Migrations
                     b.Property<decimal>("NowPrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<bool>("Online")
+                        .HasColumnType("bit");
+
                     b.Property<decimal>("OriginalPrice")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Pic")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductTypeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ProductionDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("PublishStatus")
                         .HasColumnType("int");
 
-                    b.Property<int>("SafeStock")
+                    b.Property<string>("SellLimit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SellNum")
                         .HasColumnType("int");
 
-                    b.Property<int>("ShelfLife")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("SellTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<short>("SetNewDays")
+                        .HasColumnType("smallint");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
 
-                    b.Property<string>("Unit")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TopTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UpdateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Weight")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Width")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -115,6 +147,13 @@ namespace Product.API.Migrations
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Product.API.Model.ProductProperties", b =>
+                {
+                    b.HasOne("Product.API.Model.Products", "Products")
+                        .WithMany("ProductProperties")
+                        .HasForeignKey("ProductsId");
                 });
 
             modelBuilder.Entity("Product.API.Model.Products", b =>

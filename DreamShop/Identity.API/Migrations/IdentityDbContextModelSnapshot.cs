@@ -21,14 +21,16 @@ namespace Identity.API.Migrations
 
             modelBuilder.Entity("Identity.API.Model.Logins", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CreateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CreateUserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("LoginName")
                         .HasColumnType("nvarchar(max)");
@@ -42,38 +44,20 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UpdateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Logins");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "cd56076f-502b-4096-acb5-0c82d278b6ba",
-                            CreateTime = new DateTime(2020, 10, 12, 15, 13, 16, 412, DateTimeKind.Local).AddTicks(6209),
-                            LoginName = "admin",
-                            LoginPassword = "123",
-                            Status = 0,
-                            UpdateTime = new DateTime(2020, 10, 12, 15, 13, 16, 411, DateTimeKind.Local).AddTicks(2929)
-                        },
-                        new
-                        {
-                            Id = "b9089193-eb19-40f7-a023-20667ec9692e",
-                            CreateTime = new DateTime(2020, 10, 12, 15, 13, 16, 412, DateTimeKind.Local).AddTicks(6738),
-                            LoginName = "wmh",
-                            LoginPassword = "123456",
-                            Status = 0,
-                            UpdateTime = new DateTime(2020, 10, 12, 15, 13, 16, 412, DateTimeKind.Local).AddTicks(6688)
-                        });
                 });
 
             modelBuilder.Entity("Identity.API.Model.Roles", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
@@ -84,8 +68,8 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UpdateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -94,20 +78,22 @@ namespace Identity.API.Migrations
 
             modelBuilder.Entity("Identity.API.Model.UserRoles", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("RolesId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("RolesId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UpdateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UpdateUserId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("UsersId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UsersId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -120,8 +106,10 @@ namespace Identity.API.Migrations
 
             modelBuilder.Entity("Identity.API.Model.Users", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Account")
                         .HasColumnType("nvarchar(max)");
@@ -141,8 +129,8 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CreateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CreateUserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -153,8 +141,8 @@ namespace Identity.API.Migrations
                     b.Property<int>("Integral")
                         .HasColumnType("int");
 
-                    b.Property<string>("LoginsId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("LoginsId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
@@ -162,8 +150,8 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UpdateUserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.Property<int>("UserLevel")
                         .HasColumnType("int");
@@ -179,18 +167,24 @@ namespace Identity.API.Migrations
                 {
                     b.HasOne("Identity.API.Model.Roles", "Roles")
                         .WithMany("UserRoles")
-                        .HasForeignKey("RolesId");
+                        .HasForeignKey("RolesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Identity.API.Model.Users", "Users")
                         .WithMany("UserRoles")
-                        .HasForeignKey("UsersId");
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Identity.API.Model.Users", b =>
                 {
                     b.HasOne("Identity.API.Model.Logins", "Logins")
                         .WithMany()
-                        .HasForeignKey("LoginsId");
+                        .HasForeignKey("LoginsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

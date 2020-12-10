@@ -64,9 +64,9 @@ namespace Identity.API.Model
         public decimal UserMoney { get; }
 
         public DateTime CreateTime { get; set; } = DateTime.Now;
-        public string CreateUserId { get; set; }
+        public int CreateUserId { get; set; }
         public DateTime UpdateTime { get; set; } = DateTime.Now;
-        public string UpdateUserId { get; set; }
+        public int UpdateUserId { get; set; }
 
         public Logins Logins { get; set; }
         public ICollection<UserRoles> UserRoles { get; set; }

@@ -23,22 +23,22 @@ namespace Identity.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Logins>().HasData(
-                new Logins
-                {
-                    LoginName="admin",
-                    LoginPassword="123",
-                    Status= UserStatus.Normal,
-                    CreateTime=DateTime.Now,
-                },
-                new Logins
-                {
-                    LoginName = "wmh",
-                    LoginPassword = "123456",
-                    Status = UserStatus.Normal,
-                    CreateTime = DateTime.Now,
-                }
-                ) ;
+            //modelBuilder.Entity<Logins>().HasData(
+            //    new Logins
+            //    {
+            //        LoginName="admin",
+            //        LoginPassword="123",
+            //        Status= UserStatus.Normal,
+            //        CreateTime=DateTime.Now,
+            //    },
+            //    new Logins
+            //    {
+            //        LoginName = "wmh",
+            //        LoginPassword = "123456",
+            //        Status = UserStatus.Normal,
+            //        CreateTime = DateTime.Now,
+            //    }
+            //    ) ;
             modelBuilder.Entity<Roles>().ToTable("Roles");
             modelBuilder.Entity<Logins>().ToTable("Logins");
             modelBuilder.Entity<UserRoles>().ToTable("UserRoles");

@@ -50,17 +50,14 @@ namespace Orders.API.Migrations
                     b.Property<int>("Payment")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductCount")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ReceiveTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Serial")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ShippingTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Sserial")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");

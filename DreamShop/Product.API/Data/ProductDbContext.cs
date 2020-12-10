@@ -17,7 +17,7 @@ namespace Product.API.Data
 
         public DbSet<Products> Products { get; set; }
         public DbSet<ProductType> ProductType { get; set; }
-
+        public DbSet<ProductProperties> ProductProperties { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,7 +41,7 @@ namespace Product.API.Data
             //    );
             modelBuilder.Entity<Products>().ToTable("Products");
             modelBuilder.Entity<ProductType>().ToTable("ProductType");
-
+            modelBuilder.Entity<ProductProperties>().ToTable("ProductProperties");
         }
 
 

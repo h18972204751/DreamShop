@@ -11,7 +11,7 @@ namespace Orders.API.Model
         /// <summary>
         /// 编号
         /// </summary>
-        public string Sserial { get; set; }
+        public string Serial { get; set; }
 
         /// <summary>
         /// 下单用户id
@@ -29,21 +29,14 @@ namespace Orders.API.Model
         public int Payment { get; set; }
 
         /// <summary>
-        /// 原价订单金额
+        /// 原价订单总金额
         /// </summary>
         public decimal OriginalPriceSum { get; set; }
 
         /// <summary>
-        /// 现价订单金额
+        /// 现价订单总金额
         /// </summary>
         public decimal NowPriceSum { get; set; }
-
-        /// <summary>
-        /// 订单商品总数量
-        /// </summary>
-        public int ProductCount { get; set; }
-
-
 
 
         /// <summary>

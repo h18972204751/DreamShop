@@ -23,19 +23,16 @@ namespace Product.API.IntegrationEvents.EventHandling
             Console.WriteLine("订阅1");
             var productType = productDbContext.ProductType.AsQueryable().ToList();
             await UpdatePriceInBasketItems(@event.ProductTypeId, @event.Name, @event.Code, productType);
-            Console.WriteLine("订阅1111");
         }
 
         private async Task UpdatePriceInBasketItems(int productId, string name, string code, List<Model.ProductType> productType)
         {
-            Console.WriteLine("订阅2");
             var itemsToUpdate= productType.Where(x => x.Id == productId).FirstOrDefault();
             itemsToUpdate.Name = name;
             itemsToUpdate.Code = code;
             productDbContext.Update(itemsToUpdate);
-            Console.WriteLine("订阅3");
             await productDbContext.SaveChangesAsync();
-            Console.WriteLine("订阅4");
+            Console.WriteLine("订阅完成");
         }
     }
 }

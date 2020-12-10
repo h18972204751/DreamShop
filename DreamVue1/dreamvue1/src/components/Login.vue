@@ -12,10 +12,10 @@
           </div>
           <div class="form-box">
             <Form ref="formInline" :model="formDate" :rules="ruleInline">
-              <FormItem prop="loginName">
+              <FormItem prop="username">
                 <i-input
                   type="text"
-                  v-model="formDate.loginName"
+                  v-model="formDate.username"
                   clearable
                   size="large"
                   placeholder="用户名"
@@ -23,10 +23,10 @@
                   <Icon type="md-person" slot="prepend"></Icon>
                 </i-input>
               </FormItem>
-              <FormItem prop="loginPassword">
+              <FormItem prop="password">
                 <i-input
                   type="password"
-                  v-model="formDate.loginPassword"
+                  v-model="formDate.password"
                   clearable
                   size="large"
                   placeholder="密码"
@@ -61,14 +61,14 @@ export default {
   data() {
     return {
       formDate: {
-        loginName: "",
-        loginPassword: "",
+        username: "",
+        password: "",
       },
       ruleInline: {
-        loginName: [
+        username: [
           { required: true, message: "请输入用户名", trigger: "blur" },
         ],
-        loginPassword: [
+        password: [
           { required: true, message: "请输入密码", trigger: "blur" },
           {
             type: "string",
@@ -85,7 +85,7 @@ export default {
     ...mapActions(["login"]),
     handleSubmit(name) {
       const father = this;
-      console.log(this.formDate.loginName);
+      console.log(this.formDate.username);
       this.$refs[name].validate((valid) => {
         if (valid) {
           this.login(father.formDate).then((result) => {

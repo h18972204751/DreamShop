@@ -13,10 +13,10 @@ namespace Identity.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    
     public class UsersController : ControllerBase
     {
-        IdentityDbContext _context;
+        readonly IdentityDbContext _context;
 
         public UsersController(IdentityDbContext context)
         {
@@ -28,11 +28,14 @@ namespace Identity.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<MessageModel<Users>> Get(string id) 
+        [HttpGet]
+        [Route("GetUserInfo")]
+        [Authorize]
+        public async Task<MessageModel<Users>> Get() 
         {
-            if(string.IsNullOrWhiteSpace(id))
-                return new MessageModel<Users>() { Msg = "信息有误,请稍后再试!" };
-            var user = await _context.Users.FindAsync(id);
+            //if(id<=0)
+            //    return new MessageModel<Users>() { Msg = "信息有误,请稍后再试!" };
+            var user = await _context.Users.FindAsync(1);
             return new MessageModel<Users>() { Msg = "成功!",Success=true,Response= user };
             
         }
@@ -62,11 +65,6 @@ namespace Identity.API.Controllers
             _context.Users.Remove(user);
             return new MessageModel<bool>() { Msg = "删除成功!", Success = true };
         }
-
-
-
-
-
 
     }
 }

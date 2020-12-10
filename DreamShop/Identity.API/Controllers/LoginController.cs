@@ -15,12 +15,12 @@ using RestSharp;
 namespace Identity.API.Controllers
 {
     [Produces("application/json")]
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     //[Controller]
     public class LoginController : ControllerBase
     {
-        IdentityDbContext _context;
+        readonly IdentityDbContext _context;
 
 
         public LoginController(IdentityDbContext context)
@@ -36,11 +36,12 @@ namespace Identity.API.Controllers
         /// <param name="password"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<MessageModel<Logins>> Login([FromForm] string loginName, [FromForm] string loginPassword)
+        [Route("Login")]
+        public async Task<MessageModel<Logins>> Login([FromForm] string username, [FromForm] string password)
         {
-            if (string.IsNullOrWhiteSpace(loginName) || string.IsNullOrWhiteSpace(loginPassword))
-                return new MessageModel<Logins>() { Msg = "账号和密码不能为空=" + loginName + '=' + loginPassword };
-            var logins = await _context.Logins.FirstOrDefaultAsync(l => l.LoginName == loginName && l.LoginPassword == loginPassword);
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                return new MessageModel<Logins>() { Msg = "账号和密码不能为空=" + username + '=' + password };
+            var logins = await _context.Logins.FirstOrDefaultAsync(l => l.LoginName == username && l.LoginPassword == password);
             if (logins == null)
                 return new MessageModel<Logins>() { Msg = "账户和密码错误" };
             if (logins.Status == Enums.UserStatus.Normal)
@@ -86,6 +87,7 @@ namespace Identity.API.Controllers
         /// <param name="loginsViewModel"></param>
         /// <returns></returns>
         [HttpPost]
+        [Route("SignUpUser")]
         public async Task<MessageModel<Users>> SignUpUser([FromBody] LoginsViewModel loginsViewModel) 
         {
             if(loginsViewModel==null)
@@ -129,16 +131,17 @@ namespace Identity.API.Controllers
         /// <summary>
         /// 修改密码
         /// </summary>
-        /// <param name="loginName"></param>
-        /// <param name="loginPassword"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
         /// <param name="Phone"></param>
         /// <param name="checkNum"></param>
         /// <returns></returns>
         [HttpPut]
         [Authorize]
-        public async Task<MessageModel<Logins>> UpdatePassword(string loginName, string loginPassword,string Phone,string checkNum)
+        [Route("UpdatePassword")]
+        public async Task<MessageModel<Logins>> UpdatePassword(string username, string password,string Phone,string checkNum)
         {
-            if (string.IsNullOrWhiteSpace(loginName) || string.IsNullOrWhiteSpace(loginPassword) || string.IsNullOrWhiteSpace(Phone) || string.IsNullOrWhiteSpace(checkNum))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(Phone) || string.IsNullOrWhiteSpace(checkNum))
                 return new MessageModel<Logins>() { Msg = "账号和密码不能为空"};
             if ( string.IsNullOrWhiteSpace(Phone) || string.IsNullOrWhiteSpace(checkNum))
                 return new MessageModel<Logins>() { Msg = "手机和验证码不能为空" };
@@ -148,12 +151,12 @@ namespace Identity.API.Controllers
                 return new MessageModel<Logins>() { Msg = "验证码不正确" };
 
 
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Phone == Phone && u.Logins.LoginName == loginName);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Phone == Phone && u.Logins.LoginName == username);
             if (user == null)
                 return new MessageModel<Logins>() { Msg = "账号和手机号不匹配!" };
 
             var login = user.Logins;
-            login.LoginPassword = loginPassword;
+            login.LoginPassword = password;
             login = _context.Logins.Update(login).Entity;
 
             var i = await _context.SaveChangesAsync();
