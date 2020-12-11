@@ -9,7 +9,7 @@ namespace Identity.API.Model
     public class BaseModel
     {
         [Key]
-        public int Id { get; set; } 
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
     }
 }

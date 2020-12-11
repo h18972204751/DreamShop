@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CommonHelp;
+using CommonHelp.Redis;
 using Identity.API.Data;
 using Identity.API.Model;
 using Microsoft.AspNetCore.Authorization;
@@ -17,10 +18,12 @@ namespace Identity.API.Controllers
     public class UsersController : ControllerBase
     {
         readonly IdentityDbContext _context;
+        readonly IRedisBasketRepository _redis;
 
-        public UsersController(IdentityDbContext context)
+        public UsersController(IdentityDbContext context, IRedisBasketRepository redis)
         {
             this._context = context;
+            this._redis = redis;
         }
 
         /// <summary>
@@ -35,7 +38,10 @@ namespace Identity.API.Controllers
         {
             //if(id<=0)
             //    return new MessageModel<Users>() { Msg = "信息有误,请稍后再试!" };
-            var user = await _context.Users.FindAsync(1);
+            var loginId = await _redis.GetValue("LoginId");
+            var user =  _context.Users.AsQueryable().Where(u=>u.LoginsId== loginId).FirstOrDefault();
+             await _redis.Set("Users", user,TimeSpan.FromMinutes(30));
+            user = await _redis.Get<Users>("Users");
             return new MessageModel<Users>() { Msg = "成功!",Success=true,Response= user };
             
         }

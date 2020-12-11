@@ -21,16 +21,14 @@ namespace Identity.API.Migrations
 
             modelBuilder.Entity("Identity.API.Model.Logins", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreateUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CreateUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LoginName")
                         .HasColumnType("nvarchar(max)");
@@ -44,8 +42,8 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UpdateUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UpdateUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -54,10 +52,8 @@ namespace Identity.API.Migrations
 
             modelBuilder.Entity("Identity.API.Model.Roles", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
@@ -68,8 +64,8 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UpdateUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UpdateUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -78,22 +74,20 @@ namespace Identity.API.Migrations
 
             modelBuilder.Entity("Identity.API.Model.UserRoles", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("RolesId")
-                        .HasColumnType("int");
+                    b.Property<string>("RolesId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UpdateUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UpdateUserId")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -106,10 +100,8 @@ namespace Identity.API.Migrations
 
             modelBuilder.Entity("Identity.API.Model.Users", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Account")
                         .HasColumnType("nvarchar(max)");
@@ -129,8 +121,8 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreateUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CreateUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -141,8 +133,8 @@ namespace Identity.API.Migrations
                     b.Property<int>("Integral")
                         .HasColumnType("int");
 
-                    b.Property<int>("LoginsId")
-                        .HasColumnType("int");
+                    b.Property<string>("LoginsId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
@@ -150,8 +142,8 @@ namespace Identity.API.Migrations
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UpdateUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UpdateUserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserLevel")
                         .HasColumnType("int");
@@ -167,24 +159,18 @@ namespace Identity.API.Migrations
                 {
                     b.HasOne("Identity.API.Model.Roles", "Roles")
                         .WithMany("UserRoles")
-                        .HasForeignKey("RolesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RolesId");
 
                     b.HasOne("Identity.API.Model.Users", "Users")
                         .WithMany("UserRoles")
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsersId");
                 });
 
             modelBuilder.Entity("Identity.API.Model.Users", b =>
                 {
                     b.HasOne("Identity.API.Model.Logins", "Logins")
                         .WithMany()
-                        .HasForeignKey("LoginsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LoginsId");
                 });
 #pragma warning restore 612, 618
         }

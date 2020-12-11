@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CommonHelp.Redis;
 using CommonHelp.Utils;
 using EventBus.Abstractions;
 using Identity.API.Data;
@@ -13,6 +14,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
 
 namespace Identity.API
 {
@@ -35,7 +38,18 @@ namespace Identity.API
                 .AddInMemoryApiScopes(Config.Config.GetApiResources())
                 .AddInMemoryClients(Config.Config.GetClients())
                 .AddTestUsers(Config.Config.GeTestUsers());
-
+            services.AddAuthentication("Bearer")
+               //AddIdentityServerAuthentication在组件IdentityServer4.AccessTokenValidation中  这个方法支持Reference Token 和 JWT 的认证
+               .AddJwtBearer("Bearer", options =>
+               {
+                   options.Authority = "http://localhost:5000";    //配置Identityserver的授权地址
+                   options.RequireHttpsMetadata = false;           //不需要https    
+                   options.TokenValidationParameters = new TokenValidationParameters
+                   {
+                       ValidateAudience = false
+                   };
+                   //options.ApiName = OAuthConfig.UserApi.ApiName;  //api的name，需要和config的名称相同
+               });
             services.AddDbContext<IdentityDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdentityDbContext")));
 
@@ -55,6 +69,19 @@ namespace Identity.API
                 //在这里可以添加多条策略。
             });
             services.AddHttpClient();
+
+            services.AddTransient<IRedisBasketRepository, RedisBasketRepository>();
+            services.AddSingleton<ConnectionMultiplexer>(sp =>
+            {
+                //获取连接字符串
+                string redisConfiguration = Configuration.GetConnectionString("Redis");
+                var configuration = ConfigurationOptions.Parse(redisConfiguration, true);
+
+                configuration.ResolveDns = true;
+
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+            
         }
         
 

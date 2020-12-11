@@ -23,9 +23,9 @@ namespace Identity.API.Model
         /// </summary>
         public UserStatus Status { get; set; }
 
-        public DateTime CreateTime { get; set; }
-        public int CreateUserId { get; set; }
+        public DateTime CreateTime { get; set; } = DateTime.Now;
+        public string CreateUserId { get; set; }
         public DateTime UpdateTime { get; set; } = DateTime.Now;
-        public int UpdateUserId { get; set; }
+        public string UpdateUserId { get; set; }
     }
 }

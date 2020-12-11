@@ -1,0 +1,9 @@
+E:\1netcore\DreamShop\DreamShop\CommonHelp\bin\Debug\netcoreapp3.1\CommonHelp.deps.json
+E:\1netcore\DreamShop\DreamShop\CommonHelp\bin\Debug\netcoreapp3.1\CommonHelp.dll
+E:\1netcore\DreamShop\DreamShop\CommonHelp\bin\Debug\netcoreapp3.1\CommonHelp.pdb
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Debug\netcoreapp3.1\CommonHelp.csprojAssemblyReference.cache
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Debug\netcoreapp3.1\CommonHelp.AssemblyInfoInputs.cache
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Debug\netcoreapp3.1\CommonHelp.AssemblyInfo.cs
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Debug\netcoreapp3.1\CommonHelp.csproj.CoreCompileInputs.cache
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Debug\netcoreapp3.1\CommonHelp.dll
+E:\1netcore\DreamShop\DreamShop\CommonHelp\obj\Debug\netcoreapp3.1\CommonHelp.pdb

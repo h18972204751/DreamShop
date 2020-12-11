@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CommonHelp;
+using CommonHelp.Redis;
 using Identity.API.Data;
 using Identity.API.Model;
 using Identity.API.ViewModels;
@@ -21,11 +22,13 @@ namespace Identity.API.Controllers
     public class LoginController : ControllerBase
     {
         readonly IdentityDbContext _context;
+        readonly IRedisBasketRepository _redis;
 
 
-        public LoginController(IdentityDbContext context)
+        public LoginController(IdentityDbContext context, IRedisBasketRepository redis)
         {
             this._context = context;
+            this._redis = redis;
         }
 
 
@@ -48,6 +51,7 @@ namespace Identity.API.Controllers
             {
                 //获取token
                 var token = await GetTokenResponse.GetTokenClient();
+                await _redis.SetString("LoginId", logins.Id.ToString(),TimeSpan.FromMinutes(30));
                 return new MessageModel<Logins>()
                 {
                     Msg = token,
@@ -102,8 +106,12 @@ namespace Identity.API.Controllers
             var loginlist = _context.Logins.Where(l => l.LoginName == loginsViewModel.LoginName);
             if(loginlist.Count()>0)
                 return new MessageModel<Users>() { Msg = "登录名已存在!请重新输入" };
-            var login = await _context.Logins.AddAsync(loginsViewModel);
+            Logins log = new() { LoginName = loginsViewModel.LoginName, LoginPassword = loginsViewModel.LoginPassword };
+            var login =await _context.Logins.AddAsync(log);
             Users user = new Users();
+            Console.WriteLine(login.IsKeySet);
+            Console.WriteLine(login.Entity);
+            Console.WriteLine(login.Entity.Id);
             if (login.IsKeySet)
             {
                  user = new Users()

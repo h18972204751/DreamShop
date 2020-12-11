@@ -32,6 +32,7 @@ const user = {
         login(userInfo).then(response => {
           //const data = response.data
           const tokenStr = response.msg
+          alert(tokenStr);
           setToken(tokenStr)
           commit('SET_TOKEN', tokenStr)
           resolve()

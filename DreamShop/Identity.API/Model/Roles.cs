@@ -13,7 +13,7 @@ namespace Identity.API.Model
         public string Remark { get; set; }
 
         public DateTime UpdateTime { get; set; } = DateTime.Now;
-        public int UpdateUserId { get; set; }
+        public string UpdateUserId { get; set; }
 
         public ICollection<UserRoles> UserRoles { get; set; }
     }

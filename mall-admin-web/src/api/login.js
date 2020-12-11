@@ -13,7 +13,6 @@ export function getInfo() {
   return request({
     url: '/api/Users/GetUserInfo',
     method: 'get',
-    data:{id:1}
   })
 }
 

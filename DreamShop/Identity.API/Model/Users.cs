@@ -8,7 +8,7 @@ namespace Identity.API.Model
     public class Users : BaseModel
     {
 
-        public int LoginsId { get; set; }
+        public string LoginsId { get; set; }
 
         /// <summary>
         /// 用户名
@@ -64,9 +64,9 @@ namespace Identity.API.Model
         public decimal UserMoney { get; }
 
         public DateTime CreateTime { get; set; } = DateTime.Now;
-        public int CreateUserId { get; set; }
+        public string CreateUserId { get; set; }
         public DateTime UpdateTime { get; set; } = DateTime.Now;
-        public int UpdateUserId { get; set; }
+        public string UpdateUserId { get; set; }
 
         public Logins Logins { get; set; }
         public ICollection<UserRoles> UserRoles { get; set; }
