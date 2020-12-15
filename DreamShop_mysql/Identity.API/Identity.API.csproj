@@ -25,8 +25,8 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Enums\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Model\" />
   </ItemGroup>
 
 

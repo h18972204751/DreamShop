@@ -27,7 +27,7 @@ namespace CommonHelp
         /// 返回数据集合
         /// ResponseJson =new JsonArray() { new {A=1 },new {B="1" } }
         /// </summary>
-        public JsonArray ResponseJson { get; set; }
+        public dynamic ResponseJson { get; set; }
 
         public T Response { get; set; }
     }

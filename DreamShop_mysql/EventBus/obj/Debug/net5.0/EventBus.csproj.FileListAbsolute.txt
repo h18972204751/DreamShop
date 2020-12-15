@@ -21,3 +21,4 @@ E:\1netcore\DreamShop\DreamShop_mysql\EventBus\obj\Debug\net5.0\EventBus.csproj.
 E:\1netcore\DreamShop\DreamShop_mysql\EventBus\obj\Debug\net5.0\EventBus.dll
 E:\1netcore\DreamShop\DreamShop_mysql\EventBus\obj\Debug\net5.0\ref\EventBus.dll
 E:\1netcore\DreamShop\DreamShop_mysql\EventBus\obj\Debug\net5.0\EventBus.pdb
+E:\1netcore\DreamShop\DreamShop_mysql\EventBus\obj\Debug\net5.0\EventBus.csprojAssemblyReference.cache

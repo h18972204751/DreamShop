@@ -1,10 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using Autofac;
 using CommonHelp.Redis;
 using CommonHelp.Utils;
 using EventBus.Abstractions;
+using Identity.API.Infrastructure;
+using Identity.API.Infrastructure.IRepository;
+using Identity.API.Infrastructure.Repository;
+using Identity.API.Models;
 //using Identity.API.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,8 +57,8 @@ namespace Identity.API
                    };
                    //options.ApiName = OAuthConfig.UserApi.ApiName;  //api的name，需要和config的名称相同
                });
-            //services.AddDbContext<IdentityDbContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("IdentityDbContext")));
+            services.AddDbContext<DreamShopUserAdminContext>(options =>
+            options.UseMySql("server=49.235.230.16;userid=root;pwd=Wei19960705.;port=3306;database=dreamshop.useradmin;sslmode=none", x => x.ServerVersion("5.7.24-mysql")));
 
             services.AddCors(options => {
                 options.AddPolicy("any", builder => 
@@ -70,20 +77,34 @@ namespace Identity.API
             });
             services.AddHttpClient();
 
+            //注册Redis
             services.AddTransient<IRedisBasketRepository, RedisBasketRepository>();
             services.AddSingleton<ConnectionMultiplexer>(sp =>
             {
                 //获取连接字符串
                 string redisConfiguration = Configuration.GetConnectionString("Redis");
                 var configuration = ConfigurationOptions.Parse(redisConfiguration, true);
-
                 configuration.ResolveDns = true;
-
                 return ConnectionMultiplexer.Connect(configuration);
             });
-            
+
+            var builder = new ContainerBuilder();
+            var assembly = this.GetType().GetTypeInfo().Assembly.GetExportedTypes().ToArray();
+            var baseType = typeof(IDependency);
+            //找到接口和实现类
+            var types = assembly.Where(x => x != baseType && baseType.IsAssignableFrom(x)).ToList();
+            //找到接口
+            var implementTypes = types.Where(x => x.IsClass).ToList();
+            var interfaceTypes = types.Where(x => x.IsInterface).ToList();
+            foreach (var implementType in implementTypes)
+            {
+                //implementType实现类     找到这个实现类实现的接口
+                var interfaceType = interfaceTypes.FirstOrDefault(x => x.IsAssignableFrom(implementType));
+                if (interfaceType != null)
+                    services.AddScoped(interfaceType, implementType);
+            }
         }
-        
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

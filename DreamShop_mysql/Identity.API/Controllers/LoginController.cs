@@ -51,7 +51,7 @@
 //            {
 //                //获取token
 //                var token = await GetTokenResponse.GetTokenClient();
-//                await _redis.SetString("LoginId", logins.Id.ToString(),TimeSpan.FromMinutes(30));
+//                await _redis.SetString("LoginId", logins.Id.ToString(), TimeSpan.FromMinutes(30));
 //                return new MessageModel<Logins>()
 //                {
 //                    Msg = token,
@@ -83,7 +83,7 @@
 //        //    }
 //        //    return new MessageModel<Logins>() { Msg = "账号和密码不能为空" };
 //        //}
-        
+
 
 //        /// <summary>
 //        /// 注册账号
@@ -92,29 +92,29 @@
 //        /// <returns></returns>
 //        [HttpPost]
 //        [Route("SignUpUser")]
-//        public async Task<MessageModel<Users>> SignUpUser([FromBody] LoginsViewModel loginsViewModel) 
+//        public async Task<MessageModel<Users>> SignUpUser([FromBody] LoginsViewModel loginsViewModel)
 //        {
-//            if(loginsViewModel==null)
+//            if (loginsViewModel == null)
 //                return new MessageModel<Users>() { Msg = "信息输入有误,请稍后再试!" };
 //            if (string.IsNullOrWhiteSpace(loginsViewModel.LoginName) || string.IsNullOrWhiteSpace(loginsViewModel.LoginPassword))
-//                return new MessageModel<Users>() { Msg = "账号和密码不能为空"};
+//                return new MessageModel<Users>() { Msg = "账号和密码不能为空" };
 //            if (string.IsNullOrWhiteSpace(loginsViewModel.Phone) && string.IsNullOrWhiteSpace(loginsViewModel.Email))
 //                return new MessageModel<Users>() { Msg = "手机号或邮箱不能为空" };
-//            if (string.IsNullOrWhiteSpace(loginsViewModel.Account) )
+//            if (string.IsNullOrWhiteSpace(loginsViewModel.Account))
 //                return new MessageModel<Users>() { Msg = "昵称不能为空" };
 
 //            var loginlist = _context.Logins.Where(l => l.LoginName == loginsViewModel.LoginName);
-//            if(loginlist.Count()>0)
+//            if (loginlist.Count() > 0)
 //                return new MessageModel<Users>() { Msg = "登录名已存在!请重新输入" };
 //            Logins log = new() { LoginName = loginsViewModel.LoginName, LoginPassword = loginsViewModel.LoginPassword };
-//            var login =await _context.Logins.AddAsync(log);
+//            var login = await _context.Logins.AddAsync(log);
 //            Users user = new Users();
 //            Console.WriteLine(login.IsKeySet);
 //            Console.WriteLine(login.Entity);
 //            Console.WriteLine(login.Entity.Id);
 //            if (login.IsKeySet)
 //            {
-//                 user = new Users()
+//                user = new Users()
 //                {
 //                    Account = loginsViewModel.Account,
 //                    LoginsId = login.Entity.Id,
@@ -126,12 +126,12 @@
 //            var i = await _context.SaveChangesAsync();
 //            if (i == 2)
 //            {
-//                return new MessageModel<Users>() 
-//                { 
-//                    Msg = "注册成功", 
-//                    Success = true, 
-//                    Response= user
-//                } ;
+//                return new MessageModel<Users>()
+//                {
+//                    Msg = "注册成功",
+//                    Success = true,
+//                    Response = user
+//                };
 //            }
 //            return null;
 //        }
@@ -147,15 +147,15 @@
 //        [HttpPut]
 //        [Authorize]
 //        [Route("UpdatePassword")]
-//        public async Task<MessageModel<Logins>> UpdatePassword(string username, string password,string Phone,string checkNum)
+//        public async Task<MessageModel<Logins>> UpdatePassword(string username, string password, string Phone, string checkNum)
 //        {
 //            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(Phone) || string.IsNullOrWhiteSpace(checkNum))
-//                return new MessageModel<Logins>() { Msg = "账号和密码不能为空"};
-//            if ( string.IsNullOrWhiteSpace(Phone) || string.IsNullOrWhiteSpace(checkNum))
+//                return new MessageModel<Logins>() { Msg = "账号和密码不能为空" };
+//            if (string.IsNullOrWhiteSpace(Phone) || string.IsNullOrWhiteSpace(checkNum))
 //                return new MessageModel<Logins>() { Msg = "手机和验证码不能为空" };
 
 //            //验证验证码 暂时定死
-//            if(checkNum!="1234")
+//            if (checkNum != "1234")
 //                return new MessageModel<Logins>() { Msg = "验证码不正确" };
 
 

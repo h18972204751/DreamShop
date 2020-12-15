@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Identity.API.Infrastructure.Repository
@@ -12,7 +13,7 @@ namespace Identity.API.Infrastructure.Repository
     {
         private readonly DbSet<T> _dbSet = null;
 
-        public BaseRepository(DbContextOptions options) : base(options)
+        public BaseRepository(DbContextOptions<DreamShopUserAdminContext> options) : base(options)
         {
             this._dbSet = base.Set<T>();
         }

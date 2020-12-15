@@ -46,7 +46,7 @@ namespace Identity.API.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=49.235.230.16;userid=root;pwd=Wei19960705.;port=3306;database=dreamshop.useradmin;sslmode=none", x => x.ServerVersion("5.7.24-mysql"));
+                //optionsBuilder.UseMySql("server=49.235.230.16;userid=root;pwd=Wei19960705.;port=3306;database=dreamshop.useradmin;sslmode=none", x => x.ServerVersion("5.7.24-mysql"));
             }
         }
 

@@ -1,0 +1,12 @@
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\bin\Debug\net5.0\ExtensionsHelp.deps.json
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\bin\Debug\net5.0\ExtensionsHelp.dll
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\bin\Debug\net5.0\ref\ExtensionsHelp.dll
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\bin\Debug\net5.0\ExtensionsHelp.pdb
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ExtensionsHelp.csprojAssemblyReference.cache
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ExtensionsHelp.GeneratedMSBuildEditorConfig.editorconfig
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ExtensionsHelp.AssemblyInfoInputs.cache
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ExtensionsHelp.AssemblyInfo.cs
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ExtensionsHelp.csproj.CoreCompileInputs.cache
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ExtensionsHelp.dll
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ref\ExtensionsHelp.dll
+E:\1netcore\DreamShop\DreamShop_mysql\ExtensionsHelp\obj\Debug\net5.0\ExtensionsHelp.pdb
