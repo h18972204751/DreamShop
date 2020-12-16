@@ -1,5 +1,6 @@
- import { login, logout, getInfo } from '@/api/login'
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { login, logout, getInfo } from '@/api/login'
+import { getToken, setToken, removeToken } from '@/vuex/auth'
+import { Message, MessageBox } from 'element-ui'
 
 const user = {
   state: {
@@ -30,11 +31,15 @@ const user = {
       const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
         login(userInfo).then(response => {
-          const tokenStr = response.msg
-          alert(tokenStr);
-          setToken(tokenStr)
-          commit('SET_TOKEN', tokenStr)
-          resolve()
+            if(response.success)
+            {
+                console.log(2);
+                const tokenStr = response.responseJson
+                alert(tokenStr.token);
+                setToken(tokenStr.token)
+                commit('SET_TOKEN', tokenStr)
+                resolve()
+            }
         }).catch(error => {
           reject(error)
         })
@@ -45,12 +50,13 @@ const user = {
     GetInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
         getInfo().then(response => {
-          const data = response.data
+          const data = response.response
           // if (data.roles && data.roles.length > 0) { // 验证返回的roles是否是一个非空数组
           //   commit('SET_ROLES', data.roles)
           // } else {
           //   reject('getInfo: roles must be a non-null array !')
           // }
+          localStorage.setItem('userInfo', data);
           commit('SET_ROLES', "管理员")
           commit('SET_NAME', data.username)
           commit('SET_AVATAR', data.icon)

@@ -5,17 +5,19 @@ import App from './App'
 import router from './router'
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
-import qs from "qs";
-import axios from "axios";
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
 
-           
+import store from './store'
+import '@/permission'
 Vue.config.productionTip = false
 Vue.use(ViewUI);
-Vue.use(axios);
-Vue.use(qs);
+Vue.use(ElementUI, { locale })
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 })

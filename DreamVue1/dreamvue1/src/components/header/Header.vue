@@ -19,7 +19,7 @@
       </ul>
       <ul class="detail">
         <li class="first" v-show="!userInfo.username">
-          你好，请<router-link to="/login">登录 <Icon type="md-person" /></router-link> |<span class="text-color-red"><router-link to="/SignUp">免费注册 <Icon type="md-person-add"></Icon></router-link></span>
+          你好，请<router-link to="/login">{{names}} <Icon type="md-person" /></router-link> |<span class="text-color-red"><router-link to="/SignUp">免费注册 <Icon type="md-person-add"></Icon></router-link></span>
         </li>
         <li v-show="!!userInfo.username">
           <Dropdown>
@@ -101,10 +101,11 @@ import { mapState, mapActions } from 'vuex';
 export default {
   name: 'M-Header',
   created () {
-    this.isLogin();
+    //this.isLogin();
   },
   data () {
     return {
+      names:'登录',
       city: '珠海',
       cityArr: [
         ['北京', '上海', '天津', '重庆', '广州'],

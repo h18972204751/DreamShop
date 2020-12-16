@@ -11,11 +11,11 @@
             <p>欢迎登录</p>
           </div>
           <div class="form-box">
-            <Form ref="formInline" :model="formDate" :rules="ruleInline">
+            <Form ref="formInline" :model="loginForm" :rules="ruleInline">
               <FormItem prop="username">
                 <i-input
                   type="text"
-                  v-model="formDate.username"
+                  v-model="loginForm.username"
                   clearable
                   size="large"
                   placeholder="用户名"
@@ -26,7 +26,7 @@
               <FormItem prop="password">
                 <i-input
                   type="password"
-                  v-model="formDate.password"
+                  v-model="loginForm.password"
                   clearable
                   size="large"
                   placeholder="密码"
@@ -52,15 +52,15 @@
 </template>
 
 <script>
-import store from "@/vuex/store";
-import { mapMutations, mapActions } from "vuex";
-import qs from "qs";
-import axios from "axios";
+import user from '@/store/index'
+//import { mapMutations, mapActions } from "vuex";
+  // import {isvalidUsername} from '@/utils/validate';
+//import {setSupport,getSupport,setCookie,getCookie} from '@/utils/support';
 export default {
   name: "Login",
   data() {
     return {
-      formDate: {
+      loginForm: {
         username: "",
         password: "",
       },
@@ -81,28 +81,27 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(["SET_USER_LOGIN_INFO"]),
-    ...mapActions(["login"]),
     handleSubmit(name) {
-      const father = this;
-      console.log(this.formDate.username);
-      this.$refs[name].validate((valid) => {
-        if (valid) {
-          this.login(father.formDate).then((result) => {
-            if (result) {
-              this.$Message.success("登录成功");
-              father.$router.push("/");
-            } else {
-              this.$Message.error("用户名或密码错误");
-            }
-          });
-        } else {
-          this.$Message.error("请填写正确的用户名或密码");
-        }
-      });
+      this.$refs[name].validate(valid => {
+          if (valid) {
+            this.loading = true;
+            this.$store.dispatch("Login", this.loginForm).then((rs) => {
+              console.log(12);
+              this.loading = true;
+              //setCookie("username",this.loginForm.username,15);
+              //setCookie("password",this.loginForm.password,15);
+              this.$router.push('/');
+            }).catch(() => {
+              this.loading = false
+            })
+          } else {
+            console.log('参数验证不合法！');
+            return false
+          }
+        })
     },
   },
-  store,
+ 
 };
 </script>
 

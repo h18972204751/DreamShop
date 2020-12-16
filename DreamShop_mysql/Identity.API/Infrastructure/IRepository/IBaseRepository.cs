@@ -13,7 +13,7 @@ namespace Identity.API.Infrastructure.IRepository
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        Task<T> GetByIdAsync(int Id);
+        Task<T> GetByIdAsync(long Id);
 
         /// <summary>
         /// 按需查询
@@ -58,5 +58,7 @@ namespace Identity.API.Infrastructure.IRepository
         Task<int> DeleteAsync(T t);
 
         Task<int> DeleteAsync(Expression<Func<T, bool>> expression);
+
+        Task<int> DeleteIdAsync(long Id);
     }
 }

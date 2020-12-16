@@ -48,7 +48,8 @@ namespace Identity.API.Config
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.OfflineAccess
-                    }
+                    },
+                    AccessTokenLifetime=1800
                 },
              };
         }

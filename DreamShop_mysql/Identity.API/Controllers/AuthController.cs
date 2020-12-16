@@ -3,6 +3,7 @@ using CommonHelp.Redis;
 using Identity.API.Infrastructure.IRepository;
 using Identity.API.Infrastructure.IServices;
 using Identity.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RestSharp;
@@ -59,12 +60,27 @@ namespace Identity.API.Controllers
         }
 
 
+        /// <summary>
+        /// 刷新token
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Route("RefreshToken")]
+        [Authorize]
         public async Task<MessageModel<dynamic>> RefreshToken(string token)
         {
-            
 
+            //获取新token
+            var tokens = await GetTokenResponse.GetTokenClient();
+            return new MessageModel<dynamic>()
+            {
+                Msg = "刷新成功!",
+                ResponseJson = new { Token = tokens, TokenExpires = DateTime.Now, RefreshTokenExpires = DateTime.Now.AddMinutes(30) },
+                Success = true
+            };
         }
+
 
     }
 }

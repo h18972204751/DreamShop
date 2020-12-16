@@ -42,7 +42,7 @@ namespace Identity.API.Infrastructure.Repository
         /// </summary>
         /// <param name="object Id"></param>
         /// <returns></returns>
-        public virtual async Task<T> GetByIdAsync(int Id) => await _dbSet.FindAsync(Id);
+        public virtual async Task<T> GetByIdAsync(long Id) => await _dbSet.FindAsync(Id);
 
         /// <summary>
         /// 按需查询
@@ -154,7 +154,7 @@ namespace Identity.API.Infrastructure.Repository
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public async Task<int> DeleteIdAsync(int Id)
+        public async Task<int> DeleteIdAsync(long Id)
         {
 
             if (Id > 0)

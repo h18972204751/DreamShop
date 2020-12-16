@@ -1,6 +1,6 @@
 import qs from "qs";
 import axios from "axios";
-
+// import request from './request'
 const url = 'http://localhost:5000/';
 
 
@@ -728,26 +728,35 @@ export const addSignUpUser = ({ commit }, data) => {
 
 export const login = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
+    // return request({
+    //   url: '/api/Auth/Login',
+    //   method: 'post',
+    //   data: qs.stringify(data),
+    //   headers:{'content-type': 'application/x-www-form-urlencoded'}      
+    // }).then((res)=>{
+
+    // });
+
     //, { emulateJSON: true }qs.stringify(data)
     //axios.get(url + 'api/Login/Login', {params:data}) 
-    axios.post(url + 'api/Login/Login', qs.stringify(data))
-      .then((res) => {
-        if(res.data.success)
-        {
-          localStorage.setItem('loginInfo', JSON.stringify(res.data.response.loginName));
-          const loginInfos = localStorage.getItem('loginInfo');
-          console.log(loginInfos);
-          console.log(res.data);
-          commit('SET_USER_LOGIN_INFO', res.data.response);
-          resolve(true);
-          return true;
-        }
-        else
-        {
-          resolve(false);
-          return false;
-        }
-      });
+    // axios.post(url + 'api/Login/Login', qs.stringify(data))
+    //   .then((res) => {
+    //     if(res.data.success)
+    //     {
+    //       localStorage.setItem('loginInfo', JSON.stringify(res.data.response.loginName));
+    //       const loginInfos = localStorage.getItem('loginInfo');
+    //       console.log(loginInfos);
+    //       console.log(res.data);
+    //       commit('SET_USER_LOGIN_INFO', res.data.response);
+    //       resolve(true);
+    //       return true;
+    //     }
+    //     else
+    //     {
+    //       resolve(false);
+    //       return false;
+    //     }
+    //   });
   });
 };
 
