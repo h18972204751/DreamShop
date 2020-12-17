@@ -5,19 +5,9 @@ import 'nprogress/nprogress.css'// Progress 进度条样式
 import { Message } from 'element-ui'
 import { getToken } from '@/vuex/auth' // 验权
 
-const whiteList = ['/login'] // 不重定向白名单
+const whiteList = ['/login','/'] // 不重定向白名单
 router.beforeEach((to, from, next) => {
   NProgress.start()
-  if(getToken()&&to.path === '/login')
-  {
-    next('/login')
-    NProgress.done()
-  }
-  else
-  {
-    next('/')
-  }
-
   if (getToken()) {
     if (to.path === '/login') {
       next('/')
@@ -25,7 +15,7 @@ router.beforeEach((to, from, next) => {
     } else {
       if (store.getters.roles.length === 0) {
         store.dispatch('GetInfo').then(res => { // 拉取用户信息
-          next({ ...to, replace: true })
+          next({ ...to[1], replace: true })
         }).catch((err) => {
           store.dispatch('FedLogOut').then(() => {
             Message.error(err || 'Verification failed, please login again')

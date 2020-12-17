@@ -111,13 +111,10 @@ E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microso
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.CodeAnalysis.Razor.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.CodeAnalysis.Workspaces.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.Data.SqlClient.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Design.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.Identity.Client.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.Logging.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\Microsoft.IdentityModel.Protocols.dll
@@ -155,7 +152,6 @@ E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\System.
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\System.Configuration.ConfigurationManager.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\System.Diagnostics.PerformanceCounter.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\System.IdentityModel.Tokens.Jwt.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\System.Runtime.Caching.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\System.Security.Cryptography.ProtectedData.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\System.Xml.XPath.XmlDocument.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\cs\Microsoft.CodeAnalysis.resources.dll
@@ -210,14 +206,7 @@ E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\ru\Micr
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\win-arm64\native\sni.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\win-x64\native\sni.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\win-x86\native\sni.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\CommonHelp.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\bin\Debug\netcoreapp5.0\EventBus.dll
@@ -236,3 +225,4 @@ E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\obj\Debug\netcoreapp5.0\Orders.
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\obj\Debug\netcoreapp5.0\ref\Orders.API.dll
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\obj\Debug\netcoreapp5.0\Orders.API.pdb
 E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\obj\Debug\netcoreapp5.0\Orders.API.genruntimeconfig.cache
+E:\1netcore\DreamShop\DreamShop_mysql\Orders.API\obj\Debug\netcoreapp5.0\Orders.API.MvcApplicationPartsAssemblyInfo.cs

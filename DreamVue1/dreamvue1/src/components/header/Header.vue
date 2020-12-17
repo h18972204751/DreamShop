@@ -17,9 +17,14 @@
           </Dropdown>
         </li>
       </ul>
+      <div class="my-info" @click="myInfo1">
+                    <Icon type="md-home"></Icon>
+                    <p>我的主页</p>
+                  </div>
+
       <ul class="detail">
         <li class="first" v-show="!userInfo.username">
-          你好，请<router-link to="/login">{{names}} <Icon type="md-person" /></router-link> |<span class="text-color-red"><router-link to="/SignUp">免费注册 <Icon type="md-person-add"></Icon></router-link></span>
+          你好，请<router-link to="/login">{{userInfo.username}}  <Icon type="md-person" /></router-link> |<span class="text-color-red"><router-link to="/SignUp">免费注册 <Icon type="md-person-add"></Icon></router-link></span>
         </li>
         <li v-show="!!userInfo.username">
           <Dropdown>
@@ -96,16 +101,19 @@
 </template>
 
 <script>
+import user from '@/store/index'
 import store from '@/vuex/store';
 import { mapState, mapActions } from 'vuex';
 export default {
   name: 'M-Header',
   created () {
-    //this.isLogin();
+    this.isLogin();
+    
   },
   data () {
     return {
-      names:'登录',
+      names:'123',
+      //userInf:localStorage.getItem('userInfo'),
       city: '珠海',
       cityArr: [
         ['北京', '上海', '天津', '重庆', '广州'],
@@ -119,6 +127,7 @@ export default {
     ...mapState(['userInfo', 'shoppingCart'])
   },
   methods: {
+    
     ...mapActions(['signOut', 'isLogin']),
     changeCity (city) {
       this.city = city;
@@ -132,9 +141,15 @@ export default {
     signOutFun () {
       this.signOut();
       this.$router.push('/');
+      
+    },
+    myInfo1()
+    {
+      //console.log(this.$stores.name);
+      console.log(this.userInfo.username); 
     }
   },
-  store
+  store,user
 };
 </script>
 

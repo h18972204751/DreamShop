@@ -17,9 +17,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Orders.API.Data;
-using Orders.API.IntegrationEvents.EventHandling;
-using Orders.API.IntegrationEvents.Events;
+//using Orders.API.Data;
+//using Orders.API.IntegrationEvents.EventHandling;
+//using Orders.API.IntegrationEvents.Events;
 using RabbitMQ.Client;
 
 namespace Orders.API
@@ -38,8 +38,8 @@ namespace Orders.API
         {
             services.AddControllers();
 
-            services.AddDbContext<OrdersDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("OrdersDbContext")));
+            //services.AddDbContext<OrdersDbContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("OrdersDbContext")));
 
             services.AddAuthentication("Bearer")
                //AddIdentityServerAuthentication在组件IdentityServer4.AccessTokenValidation中  这个方法支持Reference Token 和 JWT 的认证
@@ -109,7 +109,7 @@ namespace Orders.API
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
 
-            eventBus.Subscribe<ProductPriceChangedIntegrationEvent, ProductPriceChangedIntegrationEventHandler>();
+            //eventBus.Subscribe<ProductPriceChangedIntegrationEvent, ProductPriceChangedIntegrationEventHandler>();
             //eventBus.Subscribe<OrderStartedIntegrationEvent, OrderStartedIntegrationEventHandler>();
         }
 

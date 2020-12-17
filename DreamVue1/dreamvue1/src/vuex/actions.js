@@ -764,7 +764,7 @@ export const login = ({ commit }, data) => {
 export const logins = ({ commit }, data) => {
   return new Promise((resolve, reject) => {
     if (data.loginName === 'admin' && data.loginPassword === '123') {
-      localStorage.setItem('loginInfo', JSON.stringify(data));
+      localStorage.setItem('userInfo', JSON.stringify(data));
       commit('SET_USER_LOGIN_INFO', data);
       resolve(true);
       return true;
@@ -775,7 +775,7 @@ export const logins = ({ commit }, data) => {
       const users = JSON.parse(userArr);
       for (const item of users) {
         if (item.username === data.username) {
-          localStorage.setItem('loginInfo', JSON.stringify(item));
+          localStorage.setItem('userInfo', JSON.stringify(item));
           commit('SET_USER_LOGIN_INFO', item);
           resolve(true);
           break;
@@ -789,15 +789,15 @@ export const logins = ({ commit }, data) => {
 
 // 退出登陆
 export const signOut = ({ commit }) => {
-  localStorage.removeItem('loginInfo');
+  localStorage.removeItem('userInfo');
   commit('SET_USER_LOGIN_INFO', {});
 };
 
 // 判断是否登陆
 export const isLogin = ({ commit }) => {
-  const user = localStorage.getItem('loginInfo');
-  console.log("-----"+user);
+  const user = localStorage.getItem('userInfo');
+  console.log("-----"+user.usernmae);
   if (user) {
-    commit('SET_USER_LOGIN_INFO', JSON.parse(user));
+    commit('SET_USER_LOGIN_INFO', user);
   }
 };

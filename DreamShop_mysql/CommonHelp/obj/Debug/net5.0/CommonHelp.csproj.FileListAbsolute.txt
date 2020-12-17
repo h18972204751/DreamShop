@@ -14,7 +14,6 @@ E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\bin\Debug\net5.0\CommonHelp.dep
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\bin\Debug\net5.0\CommonHelp.dll
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\bin\Debug\net5.0\ref\CommonHelp.dll
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\bin\Debug\net5.0\CommonHelp.pdb
-E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.csprojAssemblyReference.cache
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.GeneratedMSBuildEditorConfig.editorconfig
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.AssemblyInfoInputs.cache
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.AssemblyInfo.cs
@@ -22,3 +21,4 @@ E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.csp
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.dll
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\ref\CommonHelp.dll
 E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.pdb
+E:\1netcore\DreamShop\DreamShop_mysql\CommonHelp\obj\Debug\net5.0\CommonHelp.csprojAssemblyReference.cache

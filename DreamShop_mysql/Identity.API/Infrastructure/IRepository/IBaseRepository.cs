@@ -42,13 +42,13 @@ namespace Identity.API.Infrastructure.IRepository
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<int> AddAsync(T t);
+        Task<(int, T)> AddAsync(T t);
         /// <summary>
         /// 修改
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
-        Task<int> UpdateAsync(T t);
+        Task<(int, T)> UpdateAsync(T t);
         /// <summary>
         /// 删除
         /// </summary>

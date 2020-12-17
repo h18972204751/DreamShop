@@ -8,8 +8,8 @@ namespace Orders.API.Infrastructure.IRepository
     public interface IOrdersRepository
     {
 
-        public Task<List<Model.Orders>> Get();
+        //public Task<List<Model.Orders>> Get();
 
-        public Task<Model.Orders> Get(int id);
+        //public Task<Model.Orders> Get(int id);
     }
 }

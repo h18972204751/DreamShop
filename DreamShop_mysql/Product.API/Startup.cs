@@ -17,7 +17,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Product.API.Data;
 using Product.API.IntegrationEvents.EventHandling;
 using Product.API.IntegrationEvents.Events;
 using RabbitMQ.Client;
@@ -38,8 +37,8 @@ namespace Product.API
         {
             services.AddControllers();
 
-            services.AddDbContext<ProductDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("ProductDbContext")));
+            //services.AddDbContext<ProductDbContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("ProductDbContext")));
 
             services.AddAuthentication("Bearer")
                //AddIdentityServerAuthentication在组件IdentityServer4.AccessTokenValidation中  这个方法支持Reference Token 和 JWT 的认证

@@ -54,14 +54,14 @@ namespace Identity.API.Controllers
                 Phone= umsMember.Phone,
                 MemberLevelId=4,
             };
-            int i = await _umsMemberRepository.AddAsync(ums);
-            if (i >0)
+            var model = await _umsMemberRepository.AddAsync(ums);
+            if (model.Item1 >0)
             {
                 return new MessageModel<UmsMember>()
                 {
                     Msg = "注册成功",
                     Success = true,
-                    Response = ums
+                    Response = model.Item2
                 };
             }
             return  new MessageModel<UmsMember>(){ Msg = "注册失败",Success = false,}; ;
@@ -81,8 +81,8 @@ namespace Identity.API.Controllers
         {
             //if(id<=0)
             //    return new MessageModel<UmsMember>() { Msg = "信息有误,请稍后再试!" };
-            var loginId = await _redis.GetValue("LoginId");
-            var user =await _umsMemberRepository.GetAsync(u => u.Id.ToString() == loginId);
+            var memberId = await _redis.GetValue("memberId");
+            var user =await _umsMemberRepository.GetAsync(u => u.Id.ToString() == memberId);
             if(user==null)
                 return new MessageModel<UmsMember>() { Msg = "用户信息获取失败!", Success = false };
             await _redis.Set("Users", user, TimeSpan.FromMinutes(30));
@@ -130,8 +130,8 @@ namespace Identity.API.Controllers
                 return new MessageModel<UmsMember>() { Msg = "账号和手机号不匹配!" };
 
             user.Password = password;
-            int i =await _umsMemberRepository.UpdateAsync(user);
-            if (i == 1)
+            var model = await _umsMemberRepository.UpdateAsync(user);
+            if (model.Item1 == 1)
             {
                 return new MessageModel<UmsMember>() { Msg = "密码修改成功" };
             }

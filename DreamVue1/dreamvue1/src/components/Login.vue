@@ -52,10 +52,8 @@
 </template>
 
 <script>
-import user from '@/store/index'
-//import { mapMutations, mapActions } from "vuex";
-  // import {isvalidUsername} from '@/utils/validate';
-//import {setSupport,getSupport,setCookie,getCookie} from '@/utils/support';
+import store from '../store/index'
+import { mapMutations, mapActions } from 'vuex';
 export default {
   name: "Login",
   data() {
@@ -81,6 +79,7 @@ export default {
     };
   },
   methods: {
+    ...mapMutations(['SET_USER_LOGIN_INFO']),
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
           if (valid) {

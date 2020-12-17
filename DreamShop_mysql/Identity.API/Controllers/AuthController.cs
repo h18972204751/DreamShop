@@ -40,19 +40,19 @@ namespace Identity.API.Controllers
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 return new MessageModel<UmsMember>() { Msg = "账号和密码不能为空=" + username + '=' + password };
 
-            var logins = await _umsMemberRepository.Login(username, password);
-            if (logins == null)
+            var member = await _umsMemberRepository.Login(username, password);
+            if (member == null)
                 return new MessageModel<UmsMember>() { Msg = "账户或密码错误" };
-            if (logins.Status ==1)
+            if (member.Status ==1)
             {
                 //获取token
                 var token = await GetTokenResponse.GetTokenClient();
-                await _redis.SetString("LoginId", logins.Id.ToString(), TimeSpan.FromMinutes(30));
+                await _redis.SetString("memberId", member.Id.ToString(), TimeSpan.FromMinutes(30));
                 return new MessageModel<UmsMember>()
                 {
                     Msg = "登录成功!",
                     ResponseJson = new { Token = token, TokenExpires=DateTime.Now, RefreshTokenExpires= DateTime.Now.AddMinutes(30) },
-                    Response = logins,
+                    Response = member,
                     Success = true
                 };
             }

@@ -104,14 +104,14 @@ namespace Identity.API.Infrastructure.Repository
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
-        public async Task<int> AddAsync(T t)
+        public async Task<(int,T)> AddAsync(T t)
         {
             if (t != null)
             {
-                await _dbSet.AddAsync(t);
-                return await base.SaveChangesAsync();
+                var s= await _dbSet.AddAsync(t);
+                return (await base.SaveChangesAsync(), s.Entity);
             }
-            return 0;
+            return (0,null);
         }
 
         /// <summary>
@@ -135,14 +135,14 @@ namespace Identity.API.Infrastructure.Repository
 
         #region 修改
 
-        public async Task<int> UpdateAsync(T t)
+        public async Task<(int, T)> UpdateAsync(T t)
         {
             if (t != null)
             {
-                _dbSet.Update(t);
-                return await base.SaveChangesAsync();
+               var s=_dbSet.Update(t);
+                return (await base.SaveChangesAsync(),s.Entity);
             }
-            return 0;
+            return (0,null);
 
         }
 
