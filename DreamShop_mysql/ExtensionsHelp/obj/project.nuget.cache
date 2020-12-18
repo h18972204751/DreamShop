@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "lOC76GYQyQDS3hjesGJInKl5XmZwCvVmkLrgUxtlc5sd8iIcf8/q05nhdtDdkgBdWmin+VLAgpuX8Y7OzKKvkA==",
+  "dgSpecHash": "VJ3NB06IZkrktCVAKPeKHG0+pjciFVHAYzXLYgY2W7pm3C1oG5sf3WlNytdDoz/gbSaa9L5eaZ6TwrFrlG5vnQ==",
   "success": true,
   "projectFilePath": "E:\\1netcore\\DreamShop\\DreamShop_mysql\\ExtensionsHelp\\ExtensionsHelp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.2.0\\microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.2.0\\microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.2.0\\microsoft.extensions.logging.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

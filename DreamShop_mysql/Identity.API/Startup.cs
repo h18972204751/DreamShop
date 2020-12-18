@@ -5,9 +5,11 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
+using CommonHelp.Help;
 using CommonHelp.Redis;
 using CommonHelp.Utils;
 using EventBus.Abstractions;
+using ExtensionsHelp.MiddleWare;
 using Identity.API.Infrastructure;
 using Identity.API.Infrastructure.IRepository;
 using Identity.API.Infrastructure.Repository;
@@ -22,6 +24,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using StackExchange.Redis;
 
 namespace Identity.API
@@ -31,6 +34,7 @@ namespace Identity.API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            Configuration.UseSeriLog(Configuration.GetSection("EsConfig").Get<ElasticConfig>());
         }
 
         public IConfiguration Configuration { get; }
@@ -107,18 +111,22 @@ namespace Identity.API
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
+           
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            //Ìí¼ÓSerilog
+           loggerFactory.AddSerilog();
+
             app.UseIdentityServer();
 
             app.UseRouting();
             app.UseCors("any");
             app.UseAuthorization();
-
+            app.UseMiddleware<CostomErrorMiddle>();
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapControllers();

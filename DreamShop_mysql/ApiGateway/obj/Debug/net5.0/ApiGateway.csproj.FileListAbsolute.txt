@@ -82,6 +82,7 @@ E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\bin\Debug\net5.0\Polly.dll
 E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\bin\Debug\net5.0\runtimes\unix\lib\netstandard1.3\System.Net.Http.WinHttpHandler.dll
 E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\bin\Debug\net5.0\runtimes\win\lib\netstandard1.3\System.Net.Http.WinHttpHandler.dll
+E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\obj\Debug\net5.0\ApiGateway.csprojAssemblyReference.cache
 E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\obj\Debug\net5.0\ApiGateway.GeneratedMSBuildEditorConfig.editorconfig
 E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\obj\Debug\net5.0\ApiGateway.AssemblyInfoInputs.cache
 E:\1netcore\DreamShop\DreamShop_mysql\ApiGateway\obj\Debug\net5.0\ApiGateway.AssemblyInfo.cs

@@ -6,7 +6,9 @@ using Identity.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using RestSharp;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +39,8 @@ namespace Identity.API.Controllers
         [Route("Login")]
         public async Task<MessageModel<UmsMember>> Login([FromForm] string username, [FromForm] string password)
         {
+            Log.Logger.Error("1111111111111111111111111111");
+            //int i = Convert.ToInt32("asddsdsd");
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
                 return new MessageModel<UmsMember>() { Msg = "账号和密码不能为空=" + username + '=' + password };
 

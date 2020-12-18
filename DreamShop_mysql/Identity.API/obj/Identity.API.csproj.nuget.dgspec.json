@@ -59,6 +59,26 @@
               "target": "Package",
               "version": "[106.11.7, )"
             },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.Async": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.4.1, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.1.30, )"
@@ -219,6 +239,77 @@
         }
       }
     },
+    "E:\\1netcore\\DreamShop\\DreamShop_mysql\\ExtensionsHelp\\ExtensionsHelp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\1netcore\\DreamShop\\DreamShop_mysql\\ExtensionsHelp\\ExtensionsHelp.csproj",
+        "projectName": "ExtensionsHelp",
+        "projectPath": "E:\\1netcore\\DreamShop\\DreamShop_mysql\\ExtensionsHelp\\ExtensionsHelp.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "E:\\1netcore\\DreamShop\\DreamShop_mysql\\ExtensionsHelp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\1netcore\\nupkg": {},
+          "F:\\NuGet": {},
+          "http://10.0.2.10:8004/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\1netcore\\DreamShop\\DreamShop_mysql\\Identity.API\\Identity.API.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -233,7 +324,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp5.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -254,6 +345,9 @@
               },
               "E:\\1netcore\\DreamShop\\DreamShop_mysql\\EventBus\\EventBus.csproj": {
                 "projectPath": "E:\\1netcore\\DreamShop\\DreamShop_mysql\\EventBus\\EventBus.csproj"
+              },
+              "E:\\1netcore\\DreamShop\\DreamShop_mysql\\ExtensionsHelp\\ExtensionsHelp.csproj": {
+                "projectPath": "E:\\1netcore\\DreamShop\\DreamShop_mysql\\ExtensionsHelp\\ExtensionsHelp.csproj"
               }
             }
           }
@@ -297,6 +391,30 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.2.4, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "Serilog.Extensions.Logging": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Serilog.Sinks.Async": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.4.1, )"
+            },
+            "SkyAPM.Agent.AspNetCore": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             }
           },
           "imports": [

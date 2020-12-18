@@ -12,6 +12,8 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("Identity.API")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("SkyAPM.Agent.AspNetCore")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.ApplicationPartAttribute("SkyAPM.Diagnostics.AspNetCore")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 
